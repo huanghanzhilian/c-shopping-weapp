@@ -1,3 +1,4 @@
+const path = require('path');
 import { defineConfig } from '@tarojs/cli'
 
 import devConfig from './dev'
@@ -7,6 +8,12 @@ import { UnifiedWebpackPluginV5 } from "weapp-tailwindcss/webpack";
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig(async (merge, { command, mode }) => {
   const baseConfig = {
+    alias: {
+      '@/components': path.resolve(__dirname, '..', 'src/components'),
+      '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+      '@/services': path.resolve(__dirname, '..', 'src/services'),
+      '@/store': path.resolve(__dirname, '..', 'src/store'),
+    },
     projectName: 'c-shopping-weapp',
     date: '2024-4-8',
     designWidth: 750,
@@ -33,18 +40,6 @@ export default defineConfig(async (merge, { command, mode }) => {
       enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
     mini: {
-      // webpackChain(chain, webpack) {
-      //   chain.merge({
-      //     plugin: {
-      //       install: {
-      //         plugin: UnifiedWebpackPluginV5,
-      //         args: [{
-      //           appType: 'taro'
-      //         }]
-      //       }
-      //     }
-      //   })
-      // },
       webpackChain(chain) {
         chain.merge({
           plugin: {
@@ -84,6 +79,14 @@ export default defineConfig(async (merge, { command, mode }) => {
       }
     },
     h5: {
+      devServer: {
+        proxy: {
+          '/api': {
+            target: process.env.TARO_APP_BASE_URL,
+            changeOrigin: true,
+          }
+        }
+      },
       publicPath: '/',
       staticDirectory: 'static',
       output: {

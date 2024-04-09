@@ -1,15 +1,14 @@
 export default defineAppConfig({
   pages: [
-    
-    'pages/tabs/cart/index',
     'pages/tabs/index/index',
+    'pages/tabs/cart/index',
     'pages/tabs/category/index',
     'pages/tabs/profile/index'
   ],
   tabBar: {
     custom: false,
-    color: '#000000',
-    selectedColor: '#DC143C',
+    color: '#525252',
+    selectedColor: '#000000',
     backgroundColor: '#ffffff',
     list: [
       {
