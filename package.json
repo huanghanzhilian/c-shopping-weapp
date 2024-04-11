@@ -57,7 +57,7 @@
     "@tarojs/runtime": "3.6.25",
     "@tarojs/shared": "3.6.25",
     "@tarojs/taro": "3.6.25",
-    "ky": "^1.2.3",
+    "abortcontroller-polyfill": "^1.7.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^9.1.0",

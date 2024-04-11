@@ -9,10 +9,10 @@ export const commonApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getFeedInfo: builder.query({
-      query: () => ({
+      query: (params) => ({
         url: `/api/feed`,
         method: 'GET',
-        params: { page_size:1, page:1 },
+        params
       }),
     }),
   }),

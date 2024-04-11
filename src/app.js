@@ -1,4 +1,4 @@
-
+import 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only';
 import { useLaunch } from '@tarojs/taro'
 import { Provider } from 'react-redux'
 // import { persistStore } from 'redux-persist'
