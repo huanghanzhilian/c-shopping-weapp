@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { View } from '@tarojs/components'
 
 import Loading from './Loading'
 import Logo from '../svgs/logo'

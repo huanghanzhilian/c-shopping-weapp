@@ -1,5 +1,4 @@
-import { View, Image, StyleSheet } from 'react-native'
-import Swiper from 'react-native-swiper'
+import { View, Image, Swiper, SwiperItem } from '@tarojs/components'
 
 export default function Slider(props) {
   //? Props
@@ -10,25 +9,27 @@ export default function Slider(props) {
 
   return (
     <View className="mt-3 rounded-lg overflow-hidden">
-      <Swiper style={styles.wrapper} showsPagination activeDotColor="#1D4ED8" dotColor="#E5E7EB">
+      <Swiper
+        style={{height: 200}}
+        indicatorColor='#999'
+        indicatorActiveColor='#333'
+        vertical
+        circular
+        indicatorDots
+        autoplay
+      >
         {data
           .filter(item => item.isPublic)
           .map((item, index) => (
-            <Image
-              key={index}
-              source={{
-                uri: item.image.url,
-              }}
-              className="w-full h-full"
-            />
+            <SwiperItem key={index}>
+              <Image
+                src={item.image.url}
+                className="w-full h-full"
+              />
+            </SwiperItem>
+            
           ))}
       </Swiper>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    height: 200,
-  },
-})

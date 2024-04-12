@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import Taro from '@tarojs/taro'
 
 const taroRequestBaseQuery = ({ baseUrl, prepareHeaders }) =>  (args, { getState, ...extraOptions }) => {  
-  const { url, method, body, headers={}, params={}, ...rest } = args;  
+  const { url, method, body, headers={}, params, ...rest } = args;  
 
   const prepareParams = (params) => {
     return Object.keys(params)

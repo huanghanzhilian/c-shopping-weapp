@@ -1,33 +1,39 @@
-import { Text, View } from "@tarojs/components";
+import { Text, View, ScrollView } from "@tarojs/components";
 import { useGetFeedInfoQuery } from '@/services'
 import { useLoad } from "@tarojs/taro";
-
+import {
+  BannerOne,
+  BannerTwo,
+  BestSellsSlider,
+  Categories,
+  DiscountSlider,
+  Slider as MainSlider,
+  MostFavouraiteProducts,
+  FeedHeader,
+  ShowWrapper,
+} from '@/components'
 
 export default function FeedScreen() {
   //? Assets
 
   //? Get Feeds Query
   const {
-    data,
+    data: { childCategories, currentCategory, sliders, bannerOneType, bannerTwoType },
     isLoading,
     isSuccess,
     isFetching,
     error,
     isError,
     refetch,
-  } = useGetFeedInfoQuery({ page_size:1, page:1 })
-  useGetFeedInfoQuery({ page_size:1, page:2 })
-  useGetFeedInfoQuery({ page_size:1, page:1 })
-  useGetFeedInfoQuery()
-  console.log('useGetFeedInfoQuery', {
-    data,
-    isLoading,
-    isSuccess,
-    isFetching,
-    error,
-    isError,
-    refetch,
-  })
+  } = useGetFeedInfoQuery(
+    {},
+    {
+      selectFromResult: ({ data, ...args }) => ({
+        data: data?.data || {},
+        ...args,
+      }),
+    }
+  )
   
   useLoad(() => {
     console.log('Page loaded.')
@@ -36,7 +42,32 @@ export default function FeedScreen() {
   
   //? Render(s)
   return (
-    <View className="h-[100vh] bg-red-400">
-      <Text className="">feed</Text>
-    </View>)
+    <>
+      <ShowWrapper
+        error={error}
+        isError={isError}
+        refetch={refetch}
+        isFetching={isFetching}
+        isSuccess={isSuccess}
+        type="detail"
+      >
+        <ScrollView className="bg-white flex h-full px-3">
+          <>
+            <MainSlider data={sliders} />
+            {/* <Categories
+              childCategories={{ categories: childCategories, title: '所有分类' }}
+              color={currentCategory?.colors?.start}
+              name={currentCategory?.name}
+              homePage
+            />
+            <DiscountSlider currentCategory={currentCategory} />
+            <BannerOne data={bannerOneType} />
+            <BestSellsSlider categorySlug={currentCategory?.slug} />
+            <BannerTwo data={bannerTwoType} />
+            <MostFavouraiteProducts categorySlug={currentCategory?.slug} /> */}
+          </>
+        </ScrollView>
+      </ShowWrapper>
+    </>
+  )
 }
