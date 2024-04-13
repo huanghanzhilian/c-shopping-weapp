@@ -1,5 +1,5 @@
-import { AntDesign } from '@expo/vector-icons'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Text, View } from '@tarojs/components'
+import { Address, Icons } from '..'
 
 const FeedSectionContainer = props => {
   //? Props
@@ -16,13 +16,13 @@ const FeedSectionContainer = props => {
       <View className="flex flex-row justify-between items-center mb-3">
         <Text className="mr-auto text-base font-bold">{title}</Text>
         {showMore && (
-          <TouchableOpacity
+          <View
             onPress={handleJumpMore}
-            className="flex flex-row items-center space-x-1"
+            className="flex flex-row items-center gap-x-2"
           >
             <Text className="text-neutral-400 text-base">更多</Text>
-            <AntDesign name="arrowright" size={14} color="rgb(163 163 163)" />
-          </TouchableOpacity>
+            <Icons.Ionicons name="ios-arrow-forward" size={16} color="rgb(163 163 163)" />
+          </View>
         )}
       </View>
       {children}

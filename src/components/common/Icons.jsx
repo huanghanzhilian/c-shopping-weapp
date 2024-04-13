@@ -1,27 +1,20 @@
+import 'taro-icons/scss/MaterialCommunityIcons.scss' // 495KB
+import 'taro-icons/scss/MaterialIcons.scss' // 112KB
+import 'taro-icons/scss/Ionicons.scss' // 134KB
+import 'taro-icons/scss/FontAwesome.scss' // 322KB
+
 import {
-  Feather,
-  FontAwesome5,
-  Ionicons,
-  EvilIcons,
   MaterialIcons,
-  AntDesign,
-  SimpleLineIcons,
+  MaterialCommunityIcons,
+  Ionicons,
   FontAwesome,
-  Entypo,
-  FontAwesome6,
-} from '@expo/vector-icons'
+} from 'taro-icons';
 
 const Icons = {
-  Feather,
-  FontAwesome,
-  FontAwesome5,
-  Ionicons,
-  EvilIcons,
   MaterialIcons,
-  FontAwesome6,
-  AntDesign,
-  SimpleLineIcons,
-  Entypo,
+  MaterialCommunityIcons,
+  Ionicons,
+  FontAwesome
 }
 
 export default Icons

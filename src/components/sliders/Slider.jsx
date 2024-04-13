@@ -10,10 +10,9 @@ export default function Slider(props) {
   return (
     <View className="mt-3 rounded-lg overflow-hidden">
       <Swiper
-        style={{height: 200}}
+        style={{height: 150}}
         indicatorColor='#999'
         indicatorActiveColor='#333'
-        vertical
         circular
         indicatorDots
         autoplay
