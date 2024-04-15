@@ -10,7 +10,7 @@ export default function Categories(props) {
   //? Re-Renders
   if (childCategories.categories.length > 0 && color && name) {
     return (
-      <FeedSectionContainer title="分类" showMore={true}>
+      <FeedSectionContainer title="分类">
         <ScrollView scrollX>
           <View className="flex flex-row flex-nowrap w-auto">
             {childCategories.categories.map((item, index) => (

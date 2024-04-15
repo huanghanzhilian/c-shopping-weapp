@@ -24,7 +24,7 @@ export default function ShowWrapper(props) {
   return (
     <>
       {isError ? (
-        <View className="py-20 mx-auto space-y-3 text-center w-fit">
+        <View className="py-36 mx-auto flex flex-col gap-y-4 text-center w-fit">
           <Text className="text-sm">出现异常</Text>
           <Text className="text-sm text-red-500">{error?.error}</Text>
           <View

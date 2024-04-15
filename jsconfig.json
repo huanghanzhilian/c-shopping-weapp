@@ -6,6 +6,8 @@
       "@/utils/*": ["./src/utils/*"],
       "@/services/*": ["./src/services/*"],
       "@/store/*": ["./src/store/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/hooks/*": ["./src/hooks/*"],
     }
   }
 }

@@ -1,5 +1,5 @@
 import { Text, View } from '@tarojs/components'
-import { Address, Icons } from '..'
+import IconFont from '@/assets/iconfont'
 
 const FeedSectionContainer = props => {
   //? Props
@@ -17,11 +17,11 @@ const FeedSectionContainer = props => {
         <Text className="mr-auto text-base font-bold">{title}</Text>
         {showMore && (
           <View
-            onPress={handleJumpMore}
+            onClick={handleJumpMore}
             className="flex flex-row items-center gap-x-2"
           >
             <Text className="text-neutral-400 text-base">更多</Text>
-            <Icons.Ionicons name="ios-arrow-forward" size={16} color="rgb(163 163 163)" />
+            <IconFont name="icon-arrow" size={20} />
           </View>
         )}
       </View>

@@ -61,8 +61,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^9.1.0",
-    "redux-persist": "^6.0.0",
-    "taro-icons": "^0.4.0"
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
@@ -90,6 +89,7 @@
     "react-refresh": "^0.11.0",
     "stylelint": "^14.4.0",
     "tailwindcss": "^3.4.3",
+    "taro-iconfont-cli": "^3.3.0",
     "ts-node": "^10.9.1",
     "weapp-tailwindcss": "^3.1.1",
     "webpack": "5.78.0"

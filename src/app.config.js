@@ -1,4 +1,7 @@
+import { useGlobalIconFont } from '@/assets/iconfont/helper';
+
 export default defineAppConfig({
+  usingComponents: Object.assign(useGlobalIconFont()),
   pages: [
     'pages/tabs/index/index',
     'pages/tabs/cart/index',

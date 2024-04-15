@@ -3,14 +3,13 @@ import createSvgComponent from '@/utils/createSvgComponent';
 // //* OTHER COMPONENTS
 // export { default as Search } from './Search'
 export { default as Categories } from './Categories'
-// export { default as FeedHeader } from './FeedHeader'
+export { default as FeedHeader } from './FeedHeader'
 // export { default as Logout } from './Logout'
 // export { default as Sort } from './Sort'
 // export { default as FreeShipping } from './FreeShipping'
 
 // //* COMMON COMPONENTS
-export { default as Icons } from './common/Icons'
-// export { default as Skeleton } from './common/Skeleton'
+export { default as Skeleton } from './common/Skeleton'
 export { default as FeedSectionContainer } from './common/FeedSectionContainer'
 export { default as ShowWrapper } from './common/ShowWrapper'
 // export { default as AuthWrapper } from './common/AuthWrapper'
@@ -42,19 +41,19 @@ export { default as ShowWrapper } from './common/ShowWrapper'
 
 // //* SLIDER COMPONENTS
 export { default as Slider } from './sliders/Slider'
-// export { default as DiscountSlider } from './sliders/DiscountSlider'
-// export { default as BestSellsSlider } from './sliders/BestSellsSlider'
+export { default as DiscountSlider } from './sliders/DiscountSlider'
+export { default as BestSellsSlider } from './sliders/BestSellsSlider'
 // export { default as SmilarProductsSlider } from './sliders/SmilarProductsSlider'
 // export { default as OrderSkeleton } from './skeleton/OrderSkeleton'
 
 // //* BANNER COMPONENTS
-// export { default as BannerOne } from './banners/BannerOne'
-// export { default as BannerTwo } from './banners/BannerTwo'
+export { default as BannerOne } from './banners/BannerOne'
+export { default as BannerTwo } from './banners/BannerTwo'
 
 // //* PRODUCT COMPONENTS
-// export { default as MostFavouraiteProducts } from './product/MostFavouraiteProducts'
-// export { default as DiscountProduct } from './product/DiscountProduct'
-// export { default as ProductPrice } from './product/ProductPrice'
+export { default as MostFavouraiteProducts } from './product/MostFavouraiteProducts'
+export { default as DiscountProduct } from './product/DiscountProduct'
+export { default as ProductPrice } from './product/ProductPrice'
 // export { default as SubCategories } from './product/SubCategories'
 // export { default as ProductCard } from './product/ProductCard'
 // export { default as SpecialSell } from './product/SpecialSell'

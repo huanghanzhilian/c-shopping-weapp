@@ -13,6 +13,8 @@ export default defineConfig(async (merge, { command, mode }) => {
       '@/utils': path.resolve(__dirname, '..', 'src/utils'),
       '@/services': path.resolve(__dirname, '..', 'src/services'),
       '@/store': path.resolve(__dirname, '..', 'src/store'),
+      '@/hooks': path.resolve(__dirname, '..', 'src/hooks'),
+      '@/assets': path.resolve(__dirname, '..', 'src/assets'),
     },
     projectName: 'c-shopping-weapp',
     date: '2024-4-8',

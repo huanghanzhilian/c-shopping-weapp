@@ -1,56 +1,61 @@
-import { router } from 'expo-router'
-import { Pressable, Text, TouchableOpacity, View } from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Text, View } from '@tarojs/components'
 
 import Search from './Search'
-import Icons from './common/Icons'
-import Logo from './svgs/logo.svg'
 
 import { useAppSelector } from '@/hooks'
 import { formatNumber } from '@/utils'
+import { Logo } from '.'
+import IconFont from '@/assets/iconfont'
+import { getSystemInfoSync } from '@tarojs/taro';
+
+
 
 export default function FeedHeader() {
   //? Assets
-  const insets = useSafeAreaInsets()
+  const { statusBarHeight } = getSystemInfoSync();
 
   //? Store
   const { totalItems } = useAppSelector(state => state.cart)
 
   //? Handlers
   const handleIconClick = path => {
-    router.push(path)
+    // router.push(path)
   }
 
   //? Render(s)
   return (
-    <View style={{ paddingTop: insets.top }} className="p-3 bg-white shadow-sm">
+    <View style={{ paddingTop: `${statusBarHeight + 40}rpx` }} className="p-3 bg-white shadow-sm">
       <View className="flex flex-row items-center justify-between">
-        <Logo width={120} height={40} />
+        <Logo className="w-[240rpx] h-[80rpx]" />
+        
+      </View>
+      <View className="flex flex-row items-center justify-between">
+        <Search />
         <View className="flex flex-row space-x-3 pr-1">
-          <TouchableOpacity
+          <View
             onPress={() => {
               handleIconClick('/notice')
             }}
           >
-            <Icons.Ionicons name="notifications-outline" size={24} color="black" />
-          </TouchableOpacity>
+            <IconFont name="icon-notification" size={44} color="#1F2937" />
+          </View>
 
-          <Pressable
+          <View
             onPress={() => {
               handleIconClick('/cart')
             }}
             className="relative"
           >
-            <Icons.AntDesign name="shoppingcart" size={24} color="#1F2937" />
+            <IconFont name="icon-cart" size={44} color="#1F2937" />
             {formatNumber(totalItems) && (
               <View className="absolute outline outline-2 -top-3 -right-3 bg-red-500 rounded-md w-5 h-5 p-0.5">
                 <Text className=" text-center text-xs text-white">{formatNumber(totalItems)}</Text>
               </View>
             )}
-          </Pressable>
+          </View>
         </View>
       </View>
-      <Search />
+      
     </View>
   )
 }

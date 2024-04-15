@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { Text, View } from '@tarojs/components'
 
 import DiscountProduct from './DiscountProduct'
 
@@ -15,7 +15,7 @@ const ProductPrice = props => {
         <Text className="text-sm text-gray-700">
           {formatNumber(price - (discount * price) / 100)}
         </Text>
-        <Text className="ml-1">¥</Text>
+        <Text className="ml-1 text-sm text-gray-700">¥</Text>
       </View>
 
       {discount > 0 && (
@@ -25,7 +25,7 @@ const ProductPrice = props => {
           )}
           <Text className="ml-2 text-sm text-gray-500 line-through">
             {formatNumber(price)}
-            <Text className="ml-1">¥</Text>
+            <Text className="ml-1 text-sm text-gray-700">¥</Text>
           </Text>
         </View>
       )}

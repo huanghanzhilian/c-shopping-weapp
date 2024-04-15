@@ -1,6 +1,4 @@
-import { FontAwesome } from '@expo/vector-icons'
-import { Link } from 'expo-router'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, Image } from '@tarojs/components'
 
 import DiscountProduct from './DiscountProduct'
 import ProductPrice from './ProductPrice'
@@ -8,6 +6,7 @@ import FeedSectionContainer from '../common/FeedSectionContainer'
 import Skeleton from '../common/Skeleton'
 
 import { useGetProductsQuery } from '@/services'
+import IconFont from '@/assets/iconfont'
 
 export default function MostFavouraiteProducts(props) {
   //? Props
@@ -30,14 +29,14 @@ export default function MostFavouraiteProducts(props) {
   //? Render(s)
   return (
     <FeedSectionContainer title="热销商品">
-      <View className="w-full flex flex-row flex-wrap">
+      <View className="grid grid-cols-2 gap-1">
         {isLoading
           ? Array(10)
               .fill('_')
               .map((_, index) => (
                 <Skeleton.Items
                   key={index}
-                  className={`w-[49%] mr-[2%] mb-2 p-1 ${index % 2 === 1 ? 'mr-0' : ''}`}
+                  className="p-1"
                 >
                   <Skeleton.Item
                     height="h-32 md:h-36"
@@ -60,41 +59,31 @@ export default function MostFavouraiteProducts(props) {
                 </Skeleton.Items>
               ))
           : products?.map((product, index) => (
-              <Link
-                href={{
-                  pathname: `/products/${product._id}`,
-                }}
-                key={product._id}
-                asChild
+            <View
+              key={product._id}
+              className="p-1 transition border border-gray-50"
+            >
+              <View className="flex flex-row items-center gap-x-2">
+                <Text className="text-base">{product.rating.toFixed(1)}</Text>
+                <IconFont name="icon-fontAwesome_star" size={30} color="rgb(251 191 36)" />
+              </View>
+              <Image
+                src={product.images[0].url}
+                className="h-32 w-28 my-3 block mx-auto"
+              />
+              <View
+                className={`flex flex-row items-start mt-2 gap-x-2 ${
+                  product.discount ? 'justify-evenly' : 'justify-end pl-8'
+                }`}
               >
-                <TouchableOpacity
-                  key={product._id}
-                  className={`w-[49%] mr-[2%] mb-2 p-1 transition border border-gray-50 ${index % 2 === 1 ? 'mr-0' : ''}`}
-                >
-                  <View className="flex flex-row gap-x-2 ">
-                    <Text className="text-base">{product.rating.toFixed(1)}</Text>
-                    <FontAwesome name="star" size={24} color="rgb(251 191 36)" />
-                  </View>
-                  <Image
-                    source={{
-                      uri: product.images[0].url,
-                    }}
-                    className="h-32 w-28 my-3 mx-auto"
-                  />
-                  <View
-                    className={`flex flex-row items-start mt-2 gap-x-2 ${
-                      product.discount ? 'justify-evenly' : 'justify-end pl-8'
-                    }`}
-                  >
-                    {product.discount ? <DiscountProduct discount={product.discount} /> : null}
-                    <ProductPrice
-                      inStock={product.inStock}
-                      discount={product.discount}
-                      price={product.price}
-                    />
-                  </View>
-                </TouchableOpacity>
-              </Link>
+                {product.discount ? <DiscountProduct discount={product.discount} /> : null}
+                <ProductPrice
+                  inStock={product.inStock}
+                  discount={product.discount}
+                  price={product.price}
+                />
+              </View>
+            </View>
             ))}
       </View>
     </FeedSectionContainer>

@@ -1,5 +1,4 @@
-import { FlashList } from '@shopify/flash-list'
-import { View, Image } from 'react-native'
+import { View, Image, ScrollView } from '@tarojs/components'
 
 import FeedSectionContainer from '../common/FeedSectionContainer'
 
@@ -12,22 +11,21 @@ export default function BannerTwo(props) {
 
   return (
     <FeedSectionContainer title="推荐专题">
-      <FlashList
-        data={data}
-        renderItem={({ item, index }) => (
-          <View className="h-[30vw] w-[70vw] mr-4" key={index}>
-            <Image
-              key={index}
-              source={{
-                uri: item.image.url,
-              }}
-              className="w-full h-full rounded-lg"
-            />
-          </View>
-        )}
-        horizontal
-        estimatedItemSize={200}
-      />
+      <ScrollView scrollX>
+        <View className=" w-auto whitespace-nowrap">
+        {
+          data.map((item, index) => (
+            <View className="h-[30vw] w-[70vw] mr-4 inline-block" key={index}>
+              <Image
+                key={index}
+                src={item.image.url}
+                className="w-full h-full rounded-lg"
+              />
+            </View>
+          ))
+        }
+        </View>
+      </ScrollView>
     </FeedSectionContainer>
   )
 }

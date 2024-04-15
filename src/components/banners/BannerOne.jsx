@@ -1,4 +1,4 @@
-import { View, Image } from 'react-native'
+import { View, Image } from '@tarojs/components'
 
 import FeedSectionContainer from '../common/FeedSectionContainer'
 
@@ -10,17 +10,15 @@ export default function BannerOne(props) {
   if (data.length === 0) return null
   return (
     <FeedSectionContainer title="今日专题">
-      <View className="w-full flex flex-row flex-wrap">
+      <View className="grid grid-cols-2 gap-2 px-2">
         {data.map((item, index) => (
           <View
-            className={`w-[49%] h-24 mr-[2%] mb-[2%] ${index % 2 === 1 ? 'mr-0 mb-0' : ''}`}
+            className="h-[20vw] w-full"
             key={index}
           >
             <Image
               key={index}
-              source={{
-                uri: item.image.url,
-              }}
+              src={item.image.url}
               className="w-full h-full rounded-lg"
             />
           </View>

@@ -10,7 +10,7 @@ import {
   Slider as MainSlider,
   MostFavouraiteProducts,
   FeedHeader,
-  ShowWrapper,Logo
+  ShowWrapper
 } from '@/components'
 
 export default function FeedScreen() {
@@ -51,24 +51,26 @@ export default function FeedScreen() {
         isSuccess={isSuccess}
         type="detail"
       >
-        <ScrollView className="bg-white flex h-full w-full">
-          <View className="px-2">
-            <MainSlider data={sliders} />
-            <Categories
-              childCategories={{ categories: childCategories, title: '所有分类' }}
-              color={currentCategory?.colors?.start}
-              name={currentCategory?.name}
-              homePage
-            />
-            <Text>使用SVG</Text>
-            <Logo className=" w-24 h-12" />
-            {/* <DiscountSlider currentCategory={currentCategory} />
-            <BannerOne data={bannerOneType} />
-            <BestSellsSlider categorySlug={currentCategory?.slug} />
-            <BannerTwo data={bannerTwoType} />
-            <MostFavouraiteProducts categorySlug={currentCategory?.slug} /> */}
-          </View>
-        </ScrollView>
+        <View className="h-[100vh] flex flex-col overflow-hidden">
+          <FeedHeader title="Home" />
+            <ScrollView className="flex flex-auto w-full overflow-y-scroll" scrollY>
+              <View className="px-2">
+                <MainSlider data={sliders} />
+                <Categories
+                  childCategories={{ categories: childCategories, title: '所有分类' }}
+                  color={currentCategory?.colors?.start}
+                  name={currentCategory?.name}
+                  homePage
+                />
+                <DiscountSlider currentCategory={currentCategory} />
+                <BannerOne data={bannerOneType} />
+                <BestSellsSlider categorySlug={currentCategory?.slug} />
+                <BannerTwo data={bannerTwoType} />
+                <MostFavouraiteProducts categorySlug={currentCategory?.slug} />
+              </View>
+            </ScrollView>
+          
+        </View>
       </ShowWrapper>
     </>
   )
