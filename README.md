@@ -7,11 +7,10 @@
 
 ## 使用技术
 
-- React Native
+- Taro
 - Redux Toolkit
 - RTK Query
-- Expo Router
-- NativeWind
+- TailWindCss
 
 ## 前言
 
