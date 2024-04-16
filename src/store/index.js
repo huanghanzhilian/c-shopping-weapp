@@ -10,11 +10,6 @@ import userReducer from './slices/user.slice'
 
 import apiSlice from '../services/api'
 
-
-
-
-
-
 // const persistConfig = {
 //   key: 'root',
 //   version: 1,
