@@ -1,7 +1,7 @@
 {
   "extends": [
     "taro/react", // 项目初始化时选择的框架类型
-    // "eslint:recommended", // 新增 eslint 推荐校验
+    "eslint:recommended", // 新增 eslint 推荐校验
     // "plugin:@typescript-eslint/recommended", // 新增 typescript 推荐校验
     "prettier" // 新增 prettier 校验。比如引号，分号等配置
   ],

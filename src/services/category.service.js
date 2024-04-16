@@ -10,10 +10,11 @@ export const categoryApiSlice = apiSlice.injectEndpoints({
       providesTags: (result, error, arg) =>
         result
           ? [
-              ...result?.data?.categories.map(({ _id }) => ({
-                type: 'Category',
-                id: _id,
-              })),
+              ...(result?.data?.categories ??
+                [].map(({ _id }) => ({
+                  type: 'Category',
+                  id: _id,
+                }))),
               'Category',
             ]
           : ['Category'],
