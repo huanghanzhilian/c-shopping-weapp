@@ -1,4 +1,5 @@
 import apiSlice from './api'
+
 export const reviewApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getReviewsList: builder.query({

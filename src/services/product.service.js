@@ -3,11 +3,11 @@ import apiSlice from './api'
 export const productApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
     getProducts: builder.query({
-      query: (params) => {
+      query: params => {
         return {
           url: `/api/products`,
           method: 'GET',
-          params
+          params,
         }
       },
       serializeQueryArgs: ({ queryArgs, ...rest }) => {

@@ -1,8 +1,8 @@
 /* eslint-disable */
 
-import React from 'react';
-import { Svg, Path } from 'react-native-svg';
-import { getIconColor } from './helper';
+import React from 'react'
+import { Svg, Path } from 'react-native-svg'
+import { getIconColor } from './helper'
 
 let IconNotification = ({ size, color, ...rest }) => {
   return (
@@ -12,13 +12,13 @@ let IconNotification = ({ size, color, ...rest }) => {
         fill={getIconColor(color, 0, '#666666')}
       />
     </Svg>
-  );
-};
+  )
+}
 
 IconNotification.defaultProps = {
   size: 18,
-};
+}
 
-IconNotification = React.memo ? React.memo(IconNotification) : IconNotification;
+IconNotification = React.memo ? React.memo(IconNotification) : IconNotification
 
-export default IconNotification;
+export default IconNotification

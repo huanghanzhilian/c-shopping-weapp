@@ -2,7 +2,6 @@ import React from 'react'
 import { Text, View } from '@tarojs/components'
 import IconFont from '@/assets/iconfont'
 
-
 export default function Search(props) {
   //? Handlers
   const handleSearch = () => {

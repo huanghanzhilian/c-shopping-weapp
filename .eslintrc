@@ -1,7 +1,18 @@
 {
-  "extends": ["taro/react"],
+  "extends": [
+    "taro/react", // 项目初始化时选择的框架类型
+    // "eslint:recommended", // 新增 eslint 推荐校验
+    // "plugin:@typescript-eslint/recommended", // 新增 typescript 推荐校验
+    "prettier" // 新增 prettier 校验。比如引号，分号等配置
+  ],
+  "plugins": ["prettier"], // 使用 eslint-plugin-prettier 解决 eslint 和 prettier 的规则冲突
   "rules": {
+    "prettier/prettier": "error", // 开启 prettier 规则校验
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "import/no-commonjs": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "no-unused-vars": "off", // 未使用的变量
+    "no-undef": "off" // 这个不关会报错'definePageConfig' is not defined
   }
 }

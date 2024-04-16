@@ -1,4 +1,4 @@
-import createSvgComponent from '@/utils/createSvgComponent';
+import createSvgComponent from '@/utils/createSvgComponent'
 
 // //* OTHER COMPONENTS
 // export { default as Search } from './Search'
@@ -25,9 +25,9 @@ export { default as ShowWrapper } from './common/ShowWrapper'
 // export * from './common/Buttons'
 
 // //* LOADING
-// export { default as Loading } from './loading/Loading'
-// export { default as BigLoading } from './loading/BigLoading'
-// export { default as PageLoading } from './loading/PageLoading'
+export { default as Loading } from './loading/Loading'
+export { default as BigLoading } from './loading/BigLoading'
+export { default as PageLoading } from './loading/PageLoading'
 
 // //* RENDERER
 // export { default as SigninPromoRenderer } from './renderer/SigninPromoRenderer'
@@ -96,18 +96,18 @@ export { default as ProductPrice } from './product/ProductPrice'
 // export { default as AddressModal } from './modals/AddressModal'
 
 // //* SVGs
-export const Logo = createSvgComponent(require('./svgs/logo.svg'));
-export const OrderEmpty = createSvgComponent(require('./svgs/order-empty.svg'));
-export const EmptySearch = createSvgComponent(require('./svgs/empty-search.svg'));
-export const LogoH = createSvgComponent(require('./svgs/logo-h.svg'));
-export const LogoChina = createSvgComponent(require('./svgs/logoChina.svg'));
-export const FreeShippingSvg = createSvgComponent(require('./svgs/freeShipping.svg'));
-export const Person = createSvgComponent(require('./svgs/person.svg'));
-export const EmptyCart = createSvgComponent(require('./svgs/empty-cart.svg'));
-export const Address = createSvgComponent(require('./svgs/address.svg'));
-export const FavoritesListEmpty = createSvgComponent(require('./svgs/favorites-list-empty.svg'));
-export const ExpressDelivery = createSvgComponent(require('./svgs/express-delivery.svg'));
-export const Support = createSvgComponent(require('./svgs/support.svg'));
-export const CashOnDelivery = createSvgComponent(require('./svgs/cash-on-delivery.svg'));
-export const Daysreturn = createSvgComponent(require('./svgs/days-return.svg'));
-export const OriginalProducts = createSvgComponent(require('./svgs/original-products.svg'));
+export const Logo = createSvgComponent(require('./svgs/logo.svg'))
+export const OrderEmpty = createSvgComponent(require('./svgs/order-empty.svg'))
+export const EmptySearch = createSvgComponent(require('./svgs/empty-search.svg'))
+export const LogoH = createSvgComponent(require('./svgs/logo-h.svg'))
+export const LogoChina = createSvgComponent(require('./svgs/logoChina.svg'))
+export const FreeShippingSvg = createSvgComponent(require('./svgs/freeShipping.svg'))
+export const Person = createSvgComponent(require('./svgs/person.svg'))
+export const EmptyCart = createSvgComponent(require('./svgs/empty-cart.svg'))
+export const Address = createSvgComponent(require('./svgs/address.svg'))
+export const FavoritesListEmpty = createSvgComponent(require('./svgs/favorites-list-empty.svg'))
+export const ExpressDelivery = createSvgComponent(require('./svgs/express-delivery.svg'))
+export const Support = createSvgComponent(require('./svgs/support.svg'))
+export const CashOnDelivery = createSvgComponent(require('./svgs/cash-on-delivery.svg'))
+export const Daysreturn = createSvgComponent(require('./svgs/days-return.svg'))
+export const OriginalProducts = createSvgComponent(require('./svgs/original-products.svg'))

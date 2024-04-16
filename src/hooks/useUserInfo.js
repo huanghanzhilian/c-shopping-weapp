@@ -1,10 +1,8 @@
 import { router } from 'expo-router'
-
-import { useAppDispatch } from './useRedux'
-import useVerify from './useVerify'
-
 import { useGetUserInfoQuery } from '@/services'
 import { userLogout } from '@/store'
+import { useAppDispatch } from './useRedux'
+import useVerify from './useVerify'
 
 export default function useUserInfo() {
   const dispatch = useAppDispatch()

@@ -6,13 +6,11 @@ import { useAppSelector } from '@/hooks'
 import { formatNumber } from '@/utils'
 import { Logo } from '.'
 import IconFont from '@/assets/iconfont'
-import { getSystemInfoSync } from '@tarojs/taro';
-
-
+import { getSystemInfoSync } from '@tarojs/taro'
 
 export default function FeedHeader() {
   //? Assets
-  const { statusBarHeight } = getSystemInfoSync();
+  const { statusBarHeight } = getSystemInfoSync()
 
   //? Store
   const { totalItems } = useAppSelector(state => state.cart)
@@ -27,7 +25,6 @@ export default function FeedHeader() {
     <View style={{ paddingTop: `${statusBarHeight + 40}rpx` }} className="p-3 bg-white shadow-sm">
       <View className="flex flex-row items-center justify-between">
         <Logo className="w-[240rpx] h-[80rpx]" />
-        
       </View>
       <View className="flex flex-row items-center justify-between">
         <Search />
@@ -55,7 +52,6 @@ export default function FeedHeader() {
           </View>
         </View>
       </View>
-      
     </View>
   )
 }

@@ -1,16 +1,18 @@
 /* eslint-disable */
 
-import React from 'react';
-import Taro from '@tarojs/taro';
+import React from 'react'
+import Taro from '@tarojs/taro'
 
-const IconFont = (props) => {
-  const { name, size, color, style } = props;
+const IconFont = props => {
+  const { name, size, color, style } = props
 
-  return <iconfont name={name} size={parseFloat(Taro.pxTransform(size))} color={color} style={style} />;
-};
+  return (
+    <iconfont name={name} size={parseFloat(Taro.pxTransform(size))} color={color} style={style} />
+  )
+}
 
 IconFont.defaultProps = {
   size: 18,
-};
+}
 
-export default IconFont;
+export default IconFont

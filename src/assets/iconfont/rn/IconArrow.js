@@ -1,8 +1,8 @@
 /* eslint-disable */
 
-import React from 'react';
-import { Svg, Path } from 'react-native-svg';
-import { getIconColor } from './helper';
+import React from 'react'
+import { Svg, Path } from 'react-native-svg'
+import { getIconColor } from './helper'
 
 let IconArrow = ({ size, color, ...rest }) => {
   return (
@@ -12,13 +12,13 @@ let IconArrow = ({ size, color, ...rest }) => {
         fill={getIconColor(color, 0, '#323233')}
       />
     </Svg>
-  );
-};
+  )
+}
 
 IconArrow.defaultProps = {
   size: 18,
-};
+}
 
-IconArrow = React.memo ? React.memo(IconArrow) : IconArrow;
+IconArrow = React.memo ? React.memo(IconArrow) : IconArrow
 
-export default IconArrow;
+export default IconArrow

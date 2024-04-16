@@ -1,8 +1,8 @@
 /* eslint-disable */
 
-import React from 'react';
-import { Svg, Path } from 'react-native-svg';
-import { getIconColor } from './helper';
+import React from 'react'
+import { Svg, Path } from 'react-native-svg'
+import { getIconColor } from './helper'
 
 let IconFontAwesomeStar = ({ size, color, ...rest }) => {
   return (
@@ -12,13 +12,13 @@ let IconFontAwesomeStar = ({ size, color, ...rest }) => {
         fill={getIconColor(color, 0, '#333333')}
       />
     </Svg>
-  );
-};
+  )
+}
 
 IconFontAwesomeStar.defaultProps = {
   size: 18,
-};
+}
 
-IconFontAwesomeStar = React.memo ? React.memo(IconFontAwesomeStar) : IconFontAwesomeStar;
+IconFontAwesomeStar = React.memo ? React.memo(IconFontAwesomeStar) : IconFontAwesomeStar
 
-export default IconFontAwesomeStar;
+export default IconFontAwesomeStar

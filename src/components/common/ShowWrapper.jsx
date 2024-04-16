@@ -1,4 +1,4 @@
-import { Text, View } from "@tarojs/components";
+import { Text, View } from '@tarojs/components'
 
 import EmptyCustomList from '../emptyList/EmptyCustomList'
 import PageLoading from '../loading/PageLoading'
@@ -19,7 +19,6 @@ export default function ShowWrapper(props) {
     children,
   } = props
 
-
   //? Render(s)
   return (
     <>
@@ -27,10 +26,7 @@ export default function ShowWrapper(props) {
         <View className="py-36 mx-auto flex flex-col gap-y-4 text-center w-fit">
           <Text className="text-sm">出现异常</Text>
           <Text className="text-sm text-red-500">{error?.error}</Text>
-          <View
-            className="mx-auto py-2 px-8 flex-center bg-red-500 rounded-full"
-            onPress={refetch}
-          >
+          <View className="mx-auto py-2 px-8 flex-center bg-red-500 rounded-full" onPress={refetch}>
             <Text className="text-sm text-white">重试</Text>
           </View>
         </View>

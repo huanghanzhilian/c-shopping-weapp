@@ -43,8 +43,9 @@ export default function DiscountSlider(props) {
       {isLoading ? (
         <ScrollView scrollX>
           <View className="flex flex-row flex-nowrap w-auto space-x-2">
-            {
-              Array(10).fill('_').map((item, index) => (
+            {Array(10)
+              .fill('_')
+              .map((item, index) => (
                 <Skeleton.Items className="space-y-2" key={index}>
                   <Skeleton.Item
                     height="h-32 lg:h-36"
@@ -65,8 +66,7 @@ export default function DiscountSlider(props) {
                     className="mt-4 mx-auto"
                   />
                 </Skeleton.Items>
-              ))
-            }
+              ))}
           </View>
         </ScrollView>
       ) : !products.length ? null : (
@@ -74,10 +74,7 @@ export default function DiscountSlider(props) {
           <View className="flex flex-row flex-nowrap w-auto">
             {products.map((item, index) => (
               <View key={item._id} className="w-fit h-fit bg-white mx-0.5 py-3">
-                <Image
-                  src={item?.images[0]?.url}
-                  className="w-32 h-32"
-                />
+                <Image src={item?.images[0]?.url} className="w-32 h-32" />
                 <View className="flex flex-row px-2 mt-1.5 justify-evenly items-start gap-x-2 ">
                   <DiscountProduct discount={item.discount} />
                   <ProductPrice

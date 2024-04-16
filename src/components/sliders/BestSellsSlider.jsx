@@ -38,8 +38,7 @@ export default function BestSellsSlider(props) {
     <FeedSectionContainer title="畅销商品">
       {isLoading ? (
         <View className="flex flex-row flex-nowrap w-auto">
-          {
-            Array(2)
+          {Array(2)
             .fill('_')
             .map((_, index) => (
               <Skeleton.Items key={index} className="flex flex-row p-2 space-x-4">
@@ -54,32 +53,27 @@ export default function BestSellsSlider(props) {
                   <Skeleton.Item height="h-5" width="w-36" animated="background" className="mt-4" />
                 </Skeleton.Items>
               </Skeleton.Items>
-            ))
-          }
+            ))}
         </View>
       ) : (
         <ScrollView scrollX>
           <View className="flex flex-row flex-nowrap w-auto">
             {products.map((item, index) => (
               <View className="mr-4">
-              {item.map((row, rowIndex) => (
-                <View
-                  key={row._id}
-                  className="px-1 py-4 w-60"
-                >
-                  <View className="flex flex-row">
-                    <Image
-                      src={row.images[0].url}
-                      className="w-24 h-24 shrink-0 mr-2"
-                    />
-                    <View className="flex flex-auto flex-row items-center border-b border-gray-200">
-                      <Text className="text-2xl text-sky-500 mx-2">{index * 2 + rowIndex + 1}</Text>
-                      <Text className="flex-auto">{truncate(row.title, 15)}</Text>
+                {item.map((row, rowIndex) => (
+                  <View key={row._id} className="px-1 py-4 w-60">
+                    <View className="flex flex-row">
+                      <Image src={row.images[0].url} className="w-24 h-24 shrink-0 mr-2" />
+                      <View className="flex flex-auto flex-row items-center border-b border-gray-200">
+                        <Text className="text-2xl text-sky-500 mx-2">
+                          {index * 2 + rowIndex + 1}
+                        </Text>
+                        <Text className="flex-auto">{truncate(row.title, 15)}</Text>
+                      </View>
                     </View>
                   </View>
-                </View>
-              ))}
-            </View>
+                ))}
+              </View>
             ))}
           </View>
         </ScrollView>

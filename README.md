@@ -41,9 +41,9 @@
 
 ## 项目演示
 
-| Module |  skeleton                                                                                       | success                                                                                        | error or empty                                                                                 |
-| ------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| feed   |![](https://www.cheerspublishing.com/uploads/article/d10dbcbf-0f2c-4ab6-96f4-a24bd9f04363.png) | ![](https://www.cheerspublishing.com/uploads/article/2eb8c0c8-2328-4098-b6e0-3d09fd06bcf2.png) | ![](https://www.cheerspublishing.com/uploads/article/5b54561c-cc7e-4ea2-8c63-1e33a7ea0bfa.png) |
+| Module | loading                                                                                        | skeleton                                                                                       | success                                                                                        | error or empty                                                                                 |
+| ------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| feed   |![](https://www.cheerspublishing.com/uploads/article/c85ef06a-695e-47fd-a570-9943eb545433.png)|![](https://www.cheerspublishing.com/uploads/article/d10dbcbf-0f2c-4ab6-96f4-a24bd9f04363.png) | ![](https://www.cheerspublishing.com/uploads/article/2eb8c0c8-2328-4098-b6e0-3d09fd06bcf2.png) | ![](https://www.cheerspublishing.com/uploads/article/5b54561c-cc7e-4ea2-8c63-1e33a7ea0bfa.png) |
 
 
 ## 运行使用

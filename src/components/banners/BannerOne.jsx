@@ -12,15 +12,8 @@ export default function BannerOne(props) {
     <FeedSectionContainer title="今日专题">
       <View className="grid grid-cols-2 gap-2 px-2">
         {data.map((item, index) => (
-          <View
-            className="h-[20vw] w-full"
-            key={index}
-          >
-            <Image
-              key={index}
-              src={item.image.url}
-              className="w-full h-full rounded-lg"
-            />
+          <View className="h-[20vw] w-full" key={index}>
+            <Image key={index} src={item.image.url} className="w-full h-full rounded-lg" />
           </View>
         ))}
       </View>

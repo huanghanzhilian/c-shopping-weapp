@@ -1,8 +1,9 @@
-import { Text, View } from "@tarojs/components";
+import { Text, View } from '@tarojs/components'
 
 export default function CategoryScreen() {
   return (
     <View>
       <Text>category</Text>
-    </View>)
+    </View>
+  )
 }

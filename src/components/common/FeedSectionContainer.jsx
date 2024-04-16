@@ -16,10 +16,7 @@ const FeedSectionContainer = props => {
       <View className="flex flex-row justify-between items-center mb-3">
         <Text className="mr-auto text-base font-bold">{title}</Text>
         {showMore && (
-          <View
-            onClick={handleJumpMore}
-            className="flex flex-row items-center gap-x-2"
-          >
+          <View onClick={handleJumpMore} className="flex flex-row items-center gap-x-2">
             <Text className="text-neutral-400 text-base">更多</Text>
             <IconFont name="icon-arrow" size={20} />
           </View>

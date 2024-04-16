@@ -1,8 +1,8 @@
 /* eslint-disable */
 
-import React from 'react';
-import { Svg, Path } from 'react-native-svg';
-import { getIconColor } from './helper';
+import React from 'react'
+import { Svg, Path } from 'react-native-svg'
+import { getIconColor } from './helper'
 
 let IconSearch = ({ size, color, ...rest }) => {
   return (
@@ -12,13 +12,13 @@ let IconSearch = ({ size, color, ...rest }) => {
         fill={getIconColor(color, 0, '#666666')}
       />
     </Svg>
-  );
-};
+  )
+}
 
 IconSearch.defaultProps = {
   size: 18,
-};
+}
 
-IconSearch = React.memo ? React.memo(IconSearch) : IconSearch;
+IconSearch = React.memo ? React.memo(IconSearch) : IconSearch
 
-export default IconSearch;
+export default IconSearch

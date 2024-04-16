@@ -1,3 +1,3 @@
 export default definePageConfig({
-  navigationBarTitleText: '购物车'
+  navigationBarTitleText: '购物车',
 })
