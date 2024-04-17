@@ -1,6 +1,4 @@
-import { Text, View } from 'react-native'
-
-import { Button } from '../common/Buttons'
+import { Text, View } from '@tarojs/components'
 
 import { useAppSelector } from '@/hooks'
 import { formatNumber } from '@/utils'

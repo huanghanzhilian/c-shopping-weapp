@@ -8,6 +8,7 @@ export default defineAppConfig({
     'pages/tabs/cart/index',
     'pages/tabs/category/index',
     'pages/tabs/profile/index',
+    'pages/auth/login/index',
   ],
   tabBar: {
     custom: false,

@@ -1,9 +1,8 @@
-import { Link } from 'expo-router'
-import { Text, View } from 'react-native'
+import { Text, View } from '@tarojs/components'
 
 import CartButtons from './CartButtons'
 import DiscountCartItem from './DiscountCartItem'
-import Icons from '../common/Icons'
+// import Icons from '../common/Icons'
 import ResponsiveImage from '../common/ResponsiveImage'
 import SpecialSell from '../product/SpecialSell'
 
@@ -37,7 +36,7 @@ const CartItem = props => {
       {/* name */}
       <View className="flex-auto">
         <Text className="mb-3 text-sm">
-          <Link href={`/products/${item.productID}`}>{item.name}</Link>
+          <Text href={`/products/${item.productID}`}>{item.name}</Text>
         </Text>
 
         {/* info */}
@@ -53,16 +52,16 @@ const CartItem = props => {
           )}
           {item.size && (
             <View className="flex flex-row items-center gap-x-2">
-              <Icons.MaterialIcons name="rule" size={20} className="icon" />
+              {/* <Icons.MaterialIcons name="rule" size={20} className="icon" /> */}
               <Text className="">{item.size.size}</Text>
             </View>
           )}
           <View className="flex flex-row items-center gap-x-2">
-            <Icons.Ionicons name="shield-checkmark-outline" size={20} className="icon" />
+            {/* <Icons.Ionicons name="shield-checkmark-outline" size={20} className="icon" /> */}
             <Text className="font-light">正品保证和发货保证</Text>
           </View>
           <View className="flex flex-row items-center gap-x-2">
-            <Icons.MaterialIcons name="save" size={20} className="icon text-sky-400" />
+            {/* <Icons.MaterialIcons name="save" size={20} className="icon text-sky-400" /> */}
             <Text className="font-light">仓库有售</Text>
           </View>
           {item.discount > 0 ? (

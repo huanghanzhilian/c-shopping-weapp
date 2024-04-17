@@ -9,12 +9,12 @@ const prepareParams = params => {
 
 const taroRequestBaseQuery =
   ({ baseUrl, prepareHeaders }) =>
-  (args, { getState, ...extraOptions }) => {
+  async (args, { getState, ...extraOptions }) => {
     const { url, method, body, headers = {}, params, ...rest } = args
 
     const fullUrl = baseUrl + url + (params ? '?' + prepareParams(params) : '')
 
-    return Taro.request({
+    const response = await Taro.request({
       url: fullUrl,
       method,
       data: body,
@@ -24,6 +24,17 @@ const taroRequestBaseQuery =
           : headers,
       ...rest,
     })
+
+    if (response.statusCode >= 400) {
+      return {
+        error: {
+          status: response.statusCode,
+          data: response.data,
+        },
+      }
+    }
+
+    return { data: response.data }
   }
 
 const apiSlice = createApi({

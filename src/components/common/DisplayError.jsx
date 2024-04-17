@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native'
+import { Text, View } from '@tarojs/components'
 
 export default function DisplayError(props) {
   //? Props

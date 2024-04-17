@@ -1,4 +1,4 @@
-import { router } from 'expo-router'
+// import { router } from 'expo-router'
 import { useGetUserInfoQuery } from '@/services'
 import { userLogout } from '@/store'
 import { useAppDispatch } from './useRedux'

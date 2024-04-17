@@ -1,12 +1,12 @@
 import 'abortcontroller-polyfill/dist/abortcontroller-polyfill-only'
 import { useLaunch } from '@tarojs/taro'
 import { Provider } from 'react-redux'
-// import { persistStore } from 'redux-persist'
-// import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
 import { store } from '@/store'
 import './app.css'
 
-// const persistor = persistStore(store)
+const persistor = persistStore(store)
 
 function App({ children }) {
   useLaunch(() => {
@@ -14,7 +14,13 @@ function App({ children }) {
   })
 
   // children 是将要会渲染的页面
-  return <Provider store={store}>{children}</Provider>
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        {children}
+      </PersistGate>
+    </Provider>
+  )
 }
 
 export default App
