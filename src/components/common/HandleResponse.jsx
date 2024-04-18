@@ -1,6 +1,5 @@
 import Taro from '@tarojs/taro'
 import { useEffect } from 'react'
-// import Toast from 'react-native-toast-message'
 
 export default function HandleResponse(props) {
   //? Porps
@@ -10,10 +9,7 @@ export default function HandleResponse(props) {
   useEffect(() => {
     if (isSuccess) {
       if (onSuccess) onSuccess()
-      // Toast.show({
-      //   type: 'success',
-      //   text2: message,
-      // })
+
       Taro.showToast({
         title: message,
         icon: 'success',
@@ -23,10 +19,7 @@ export default function HandleResponse(props) {
 
     if (isError) {
       if (onError) onError()
-      // Toast.show({
-      //   type: 'error',
-      //   text2: error,
-      // })
+
       Taro.showToast({
         title: error,
         icon: 'error',

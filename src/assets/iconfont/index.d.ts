@@ -2,7 +2,20 @@
 import React, { FunctionComponent } from 'react'
 
 interface Props {
-  name: 'icon-cart' | 'icon-notification' | 'icon-search' | 'icon-fontAwesome_star' | 'icon-arrow'
+  name:
+    | 'icon-locationcity'
+    | 'icon-custom-user'
+    | 'icon-clock-circle-o'
+    | 'icon-logout'
+    | 'icon-edit'
+    | 'icon-tubiaozhizuomoban-'
+    | 'icon-Comment'
+    | 'icon-handbag'
+    | 'icon-cart'
+    | 'icon-notification'
+    | 'icon-search'
+    | 'icon-fontAwesome_star'
+    | 'icon-arrow'
   size?: number
   color?: string | string[]
   style?: React.CSSProperties

@@ -1,10 +1,9 @@
-import { Text, TouchableOpacity } from 'react-native'
-import Toast from 'react-native-toast-message'
-
-import Icons from './common/Icons'
+import { Text, View } from '@tarojs/components'
 
 import { useAppDispatch } from '@/hooks'
 import { userLogout } from '@/store'
+import IconFont from '@/assets/iconfont'
+import Taro from '@tarojs/taro'
 
 export default function Logout() {
   //? Assets
@@ -13,20 +12,21 @@ export default function Logout() {
   //? Handlers
   const handleLogout = () => {
     dispatch(userLogout())
-    Toast.show({
-      type: 'success',
-      text2: '已退出登录',
+    Taro.showToast({
+      title: '已退出登录',
+      icon: 'success',
+      duration: 2000,
     })
   }
 
   //? Render(s)
   return (
-    <TouchableOpacity
+    <View
       className="flex flex-row justify-between items-center transition-colors py-4 text-xs text-gray-700 w-full"
-      onPress={handleLogout}
+      onClick={handleLogout}
     >
       <Text className="text-gray-700">退出</Text>
-      <Icons.MaterialIcons name="logout" size={24} className="text-gray-700" />
-    </TouchableOpacity>
+      <IconFont name="icon-logout" size={30} />
+    </View>
   )
 }

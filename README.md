@@ -11,6 +11,10 @@
 - RTK Query
 - TailWindCss
 
+## 在线体验
+
+<img alt="c-shopping-weapp mini program" src="https://www.cheerspublishing.com/uploads/article/2191f980-f9b4-4afb-86f7-1c7517defd6b.png" width="150">
+
 ## 前言
 
 `c-shopping-weapp`是一个精美的电商微信小程序，界面优雅，功能丰富，小巧迅速，包含一个电商平台MVP完整功能，具备良好的审美风格与编码设计。
@@ -54,6 +58,10 @@
 | Module | Initial                                                                                        | Verify                                                                                         | Submit                                                                                         | Response error                                                                                 |
 | ------ | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | Login  | ![](https://www.cheerspublishing.com/uploads/article/55e6d3c5-17cf-4756-9b0f-d69c1c961051.png) | ![](https://www.cheerspublishing.com/uploads/article/d243b09a-4bc3-46b9-80e0-f78dc4fa21c1.png) | ![](https://www.cheerspublishing.com/uploads/article/fca6ee11-eaef-4ba7-a8ab-de5f999ac64e.png) | ![](https://www.cheerspublishing.com/uploads/article/f4b052fb-d0e6-4bf1-b92f-eec671b86c34.png) |
+
+| Module  | Not logged in                                                                                  | After logging in                                                                               |
+| ------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Profile | ![](https://www.cheerspublishing.com/uploads/article/3c1c3a60-18da-4d7d-8350-e823cb64fb49.png) | ![](https://www.cheerspublishing.com/uploads/article/2aa7dc19-b20c-4b0d-9cf4-7929466b47cb.png) |
 
 ## 运行使用
 
@@ -99,11 +107,13 @@
    npm run build:weapp
    ```
 
-## 公众号
+## 公众号｜我的微信
 
-关注公众号获得更多资讯，有任何意见或建议都欢迎提issue，或者到公众号。
+关注公众号获得更多资讯，有任何意见或建议都欢迎提issue，或者到公众号留言；也欢迎加我微信交流。
 
-![继小鹏公众号](https://www.cheerspublishing.com/uploads/article/4632461d-0d43-4378-bcf7-bb32bf0de950.jpeg)
+| 我的公众号                                                                                                                            | 我的微信                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| <img alt="继小鹏公众号" src="https://www.cheerspublishing.com/uploads/article/4632461d-0d43-4378-bcf7-bb32bf0de950.jpeg" width="150"> | <img alt="我的微信" src="https://www.cheerspublishing.com/uploads/article/6f041fb6-2141-49d8-b20b-6e989687bf9a.png" width="150"> |
 
 ## 贡献
 

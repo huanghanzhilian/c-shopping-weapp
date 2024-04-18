@@ -1,11 +1,27 @@
 /* eslint-disable */
 
 import React from 'react'
+import IconLocationcity from './IconLocationcity'
+import IconCustomUser from './IconCustomUser'
+import IconClockCircleO from './IconClockCircleO'
+import IconLogout from './IconLogout'
+import IconEdit from './IconEdit'
+import IconTubiaozhizuomoban from './IconTubiaozhizuomoban'
+import IconComment from './IconComment'
+import IconHandbag from './IconHandbag'
 import IconCart from './IconCart'
 import IconNotification from './IconNotification'
 import IconSearch from './IconSearch'
 import IconFontAwesomeStar from './IconFontAwesomeStar'
 import IconArrow from './IconArrow'
+export { default as IconLocationcity } from './IconLocationcity'
+export { default as IconCustomUser } from './IconCustomUser'
+export { default as IconClockCircleO } from './IconClockCircleO'
+export { default as IconLogout } from './IconLogout'
+export { default as IconEdit } from './IconEdit'
+export { default as IconTubiaozhizuomoban } from './IconTubiaozhizuomoban'
+export { default as IconComment } from './IconComment'
+export { default as IconHandbag } from './IconHandbag'
 export { default as IconCart } from './IconCart'
 export { default as IconNotification } from './IconNotification'
 export { default as IconSearch } from './IconSearch'
@@ -14,6 +30,22 @@ export { default as IconArrow } from './IconArrow'
 
 const IconFont = ({ name, ...rest }) => {
   switch (name) {
+    case 'icon-locationcity':
+      return <IconLocationcity {...rest} />
+    case 'icon-custom-user':
+      return <IconCustomUser {...rest} />
+    case 'icon-clock-circle-o':
+      return <IconClockCircleO {...rest} />
+    case 'icon-logout':
+      return <IconLogout {...rest} />
+    case 'icon-edit':
+      return <IconEdit {...rest} />
+    case 'icon-tubiaozhizuomoban-':
+      return <IconTubiaozhizuomoban {...rest} />
+    case 'icon-Comment':
+      return <IconComment {...rest} />
+    case 'icon-handbag':
+      return <IconHandbag {...rest} />
     case 'icon-cart':
       return <IconCart {...rest} />
     case 'icon-notification':

@@ -1,8 +1,8 @@
 {
-    "symbol_url": "//at.alicdn.com/t/c/font_4507623_tev4dvgqq8j.js",
-    "save_dir": "./src/assets/iconfont",
-    "use_rpx": true,
-    "platforms": "*",
-    "trim_icon_prefix": "",
-    "default_icon_size": 18
+  "symbol_url": "//at.alicdn.com/t/c/font_4507623_55q9bm8u23r.js",
+  "save_dir": "./src/assets/iconfont",
+  "use_rpx": true,
+  "platforms": "*",
+  "trim_icon_prefix": "",
+  "default_icon_size": 18
 }
