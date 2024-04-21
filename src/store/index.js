@@ -14,6 +14,7 @@ import { storage } from '../utils'
 const persistConfig = {
   key: 'root',
   version: 1,
+  throttle: 10,
   storage,
 }
 
