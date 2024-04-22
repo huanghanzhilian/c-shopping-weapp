@@ -1,14 +1,16 @@
-import { useLocalSearchParams } from 'expo-router'
+// import { useLocalSearchParams } from 'expo-router'
 import { useEffect } from 'react'
-import { Pressable, Text, TextInput, View } from 'react-native'
-import { Switch } from 'react-native-paper'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Text, TextInput, View } from '@tarojs/components'
+// import { Switch } from 'react-native-paper'
+// import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import Icons from '../common/Icons'
-import Modal from '../common/Modal'
+// import Icons from '../common/Icons'
+// import Modal from '../common/Modal'
 
 import { useAppDispatch, useAppSelector, useDebounce, useDisclosure } from '@/hooks'
 import { loadFilters, resetFilter, updateFilter } from '@/store'
+import { useRouter } from '@tarojs/taro'
+import IconFont from '@/assets/iconfont'
 
 const Filter = props => {
   //? Props
@@ -17,8 +19,8 @@ const Filter = props => {
   //? Assets
   const dispatch = useAppDispatch()
   const [isFilters, filtersHandlers] = useDisclosure()
-  const params = useLocalSearchParams()
-  const insets = useSafeAreaInsets()
+  const { params } = useRouter()
+  // const insets = useSafeAreaInsets()
 
   //? State
   const filters = useAppSelector(state => state.filters)
@@ -83,12 +85,12 @@ const Filter = props => {
   return (
     <>
       <View className=" px-3">
-        <Pressable className="flex flex-row items-center gap-x-1" onPress={filtersHandlers.open}>
-          <Icons.Ionicons name="filter" size={16} className="text-neutral-600" />
-          <Text className="text-base text-neutral-600">筛选</Text>
-        </Pressable>
+        <View className="flex flex-row items-center gap-x-1" onPress={filtersHandlers.open}>
+          <IconFont name="icon-filter" size={30} color="rgb(82 82 82)" />
+          <Text className="text-sm text-neutral-600">筛选</Text>
+        </View>
       </View>
-      <Modal
+      {/* <Modal
         isShow={isFilters}
         onClose={filtersHandlers.close}
         animationIn="slideInRight"
@@ -161,7 +163,7 @@ const Filter = props => {
             </View>
           </Modal.Body>
         </Modal.Content>
-      </Modal>
+      </Modal> */}
     </>
   )
 }

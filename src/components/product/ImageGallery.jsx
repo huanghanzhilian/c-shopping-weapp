@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { View } from '@tarojs/components'
 import Swiper from 'react-native-swiper'
 
 import ResponsiveImage from '../common/ResponsiveImage'

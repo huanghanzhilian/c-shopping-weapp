@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { View } from '@tarojs/components'
 
 import Skeleton from '../common/Skeleton'
 

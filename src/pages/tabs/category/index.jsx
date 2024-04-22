@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView } from '@tarojs/components'
 
 import { ShowWrapper } from '@/components'
 import { useGetCategoriesQuery } from '@/services'
+import Taro from '@tarojs/taro'
 
 export default function CategoryScreen() {
   //? Get Categories Query
@@ -24,8 +25,10 @@ export default function CategoryScreen() {
     setActiveMinCat(cat)
   }
 
-  const handleSearch = () => {
-    router.push('/search')
+  const handleRoute = path => {
+    Taro.navigateTo({
+      url: path,
+    })
   }
 
   //? Re-Renders
@@ -71,7 +74,11 @@ export default function CategoryScreen() {
                     if (levelTwoCategory.parent === activeMinCat._id) {
                       return (
                         <View className="space-y-3 py-2" key={levelTwoCategory._id}>
-                          <View>
+                          <View
+                            onClick={() =>
+                              handleRoute(`/pages/products/index?category=${levelTwoCategory.slug}`)
+                            }
+                          >
                             <Text className="break-words text-neutral-900">
                               {levelTwoCategory.name}
                             </Text>
@@ -84,6 +91,11 @@ export default function CategoryScreen() {
                                 <View
                                   key={levelThreeCategory._id}
                                   className="flex flex-col items-center gap-y-2"
+                                  onClick={() =>
+                                    handleRoute(
+                                      `/pages/products/index?category=${levelThreeCategory.slug}`
+                                    )
+                                  }
                                 >
                                   <View className="flex items-center justify-center w-full aspect-square rounded-full border-solid border-2 border-slate-200 overflow-hidden">
                                     <Image

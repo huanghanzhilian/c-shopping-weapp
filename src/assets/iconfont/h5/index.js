@@ -1,6 +1,10 @@
 /* eslint-disable */
 
 import React from 'react'
+import IconSort from './IconSort'
+import IconFilter from './IconFilter'
+import IconPlus from './IconPlus'
+import IconSave from './IconSave'
 import IconLocationcity from './IconLocationcity'
 import IconCustomUser from './IconCustomUser'
 import IconClockCircleO from './IconClockCircleO'
@@ -14,6 +18,10 @@ import IconNotification from './IconNotification'
 import IconSearch from './IconSearch'
 import IconFontAwesomeStar from './IconFontAwesomeStar'
 import IconArrow from './IconArrow'
+export { default as IconSort } from './IconSort'
+export { default as IconFilter } from './IconFilter'
+export { default as IconPlus } from './IconPlus'
+export { default as IconSave } from './IconSave'
 export { default as IconLocationcity } from './IconLocationcity'
 export { default as IconCustomUser } from './IconCustomUser'
 export { default as IconClockCircleO } from './IconClockCircleO'
@@ -30,6 +38,14 @@ export { default as IconArrow } from './IconArrow'
 
 const IconFont = ({ name, ...rest }) => {
   switch (name) {
+    case 'icon-sort':
+      return <IconSort {...rest} />
+    case 'icon-filter':
+      return <IconFilter {...rest} />
+    case 'icon-plus':
+      return <IconPlus {...rest} />
+    case 'icon-save':
+      return <IconSave {...rest} />
     case 'icon-locationcity':
       return <IconLocationcity {...rest} />
     case 'icon-custom-user':

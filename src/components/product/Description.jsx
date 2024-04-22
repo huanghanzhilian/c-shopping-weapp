@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native'
+import { Pressable, Text, View } from '@tarojs/components'
 
 import Icons from '../common/Icons'
 

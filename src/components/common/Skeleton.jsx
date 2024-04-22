@@ -41,7 +41,7 @@ const Items = props => {
   )
 }
 
-export const Item = ({ index, height, width, animated, style, children, className }) => {
+export const Item = ({ index, height, width, animated, children, className }) => {
   return (
     <View
       key={index}

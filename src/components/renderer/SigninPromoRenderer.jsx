@@ -4,10 +4,9 @@ import Taro from '@tarojs/taro'
 export default function SigninPromoRenderer(props) {
   //? Props
   const { tips = '立即登录，体验更多' } = props
+
   //? Handers
   const handleJumpLogin = () => {
-    // router.push('/login')
-    // Taro.navigateTo('pages/auth/login/index')
     Taro.navigateTo({
       url: '/pages/auth/login/index',
     })

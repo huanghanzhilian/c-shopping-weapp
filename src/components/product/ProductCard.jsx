@@ -1,37 +1,44 @@
-import { Link } from 'expo-router'
-import { Pressable, Text, View } from 'react-native'
+import { Text, View } from '@tarojs/components'
 
 import Depot from './Depot'
 import DiscountProduct from './DiscountProduct'
 import ProductPrice from './ProductPrice'
 import SpecialSell from './SpecialSell'
-import Icons from '../common/Icons'
 import ResponsiveImage from '../common/ResponsiveImage'
 
 import { truncate } from '@/utils'
+import IconFont from '@/assets/iconfont'
+import Taro from '@tarojs/taro'
 
 const ProductCard = props => {
   //? Props
   const { product } = props
 
+  //? Handlers
+  const handleRoute = path => {
+    Taro.navigateTo({
+      url: path,
+    })
+  }
+
   //? Render(s)
   return (
-    <Link href={`/products/${product._id}`} asChild>
-      <Pressable className="py-2 border-b border-gray-100 relative">
+    <View onClick={() => handleRoute(`/pages/products/item/index?id=${product._id}`)}>
+      <View className="py-2 border-b border-gray-100 relative">
         <View className="absolute top-0 left-0 z-10">
           <SpecialSell discount={product.discount} inStock={product.inStock} />
         </View>
 
         <View className="flex flex-row items-center gap-3 space-x-3">
-          <View className="flex p-1">
+          <View className="flex flex-col p-1">
             <ResponsiveImage
               dimensions="h-[28vw] w-[26vw] mb-8"
               imageStyles="h-[28vw] w-[26vw]"
-              source={product.images[0].url}
+              src={product.images[0].url}
               alt={product.title}
             />
 
-            <View className="p-2 flex flex-row gap-1.5 items-end">
+            <View className="p-2 flex flex-row items-center gap-1.5">
               {product.colors &&
                 product.inStock !== 0 &&
                 product.colors
@@ -44,7 +51,7 @@ const ProductCard = props => {
                     />
                   ))}
               {product.colors.length > 3 && product.inStock !== 0 && (
-                <Icons.AntDesign name="plus" className="w-2.5 h-2.5" />
+                <IconFont name="icon-plus" size={20} />
               )}
             </View>
           </View>
@@ -58,7 +65,7 @@ const ProductCard = props => {
               </View>
               <View className="flex flex-row items-center gap-x-1">
                 <Text className=" text-neutral-500">{product.rating.toFixed(1)}</Text>
-                <Icons.AntDesign name="star" size={16} className="text-amber-400" />
+                <IconFont name="icon-fontAwesome_star" size={30} color="rgb(251 191 36)" />
               </View>
             </View>
             <View className="flex flex-row justify-between">
@@ -74,13 +81,13 @@ const ProductCard = props => {
                   price={product.price}
                 />
               ) : (
-                <Text className="h-12 my-0.5">不可用</Text>
+                <Text className="h-12 my-0.5 text-sm">不可用</Text>
               )}
             </View>
           </View>
         </View>
-      </Pressable>
-    </Link>
+      </View>
+    </View>
   )
 }
 

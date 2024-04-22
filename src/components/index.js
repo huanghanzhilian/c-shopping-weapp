@@ -5,7 +5,7 @@ import createSvgComponent from '@/utils/createSvgComponent'
 export { default as Categories } from './Categories'
 export { default as FeedHeader } from './FeedHeader'
 export { default as Logout } from './Logout'
-// export { default as Sort } from './Sort'
+export { default as Sort } from './Sort'
 // export { default as FreeShipping } from './FreeShipping'
 
 // //* COMMON COMPONENTS
@@ -54,8 +54,8 @@ export { default as BannerTwo } from './banners/BannerTwo'
 export { default as MostFavouraiteProducts } from './product/MostFavouraiteProducts'
 export { default as DiscountProduct } from './product/DiscountProduct'
 export { default as ProductPrice } from './product/ProductPrice'
-// export { default as SubCategories } from './product/SubCategories'
-// export { default as ProductCard } from './product/ProductCard'
+export { default as SubCategories } from './product/SubCategories'
+export { default as ProductCard } from './product/ProductCard'
 export { default as SpecialSell } from './product/SpecialSell'
 // export { default as Depot } from './product/Depot'
 // export { default as ImageGallery } from './product/ImageGallery'
@@ -83,11 +83,11 @@ export { default as DiscountCartItem } from './cart/DiscountCartItem'
 // export { default as ReveiwCard } from './review/ReveiwCard'
 
 // //* FILTER COMPONENTS
-// export { default as Filter } from './filter/Filter'
+export { default as Filter } from './filter/Filter'
 
 // //* SKELETON
-// export { default as SubCategoriesSkeleton } from './skeleton/SubCategoriesSkeleton'
-// export { default as ProductSkeleton } from './skeleton/ProductSkeleton'
+export { default as SubCategoriesSkeleton } from './skeleton/SubCategoriesSkeleton'
+export { default as ProductSkeleton } from './skeleton/ProductSkeleton'
 // export { default as ReveiwSkeleton } from './skeleton/ReveiwSkeleton'
 
 // //* MODAL COMPONENTS

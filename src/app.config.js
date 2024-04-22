@@ -9,6 +9,8 @@ export default defineAppConfig({
     'pages/tabs/category/index',
     'pages/tabs/profile/index',
     'pages/auth/login/index',
+    'pages/products/index',
+    'pages/products/item/index',
   ],
   tabBar: {
     custom: false,

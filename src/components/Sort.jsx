@@ -1,19 +1,21 @@
-import { useLocalSearchParams } from 'expo-router'
+// import { useLocalSearchParams } from 'expo-router'
 import { useState, useEffect } from 'react'
-import { Pressable, Text, View } from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Text, View } from '@tarojs/components'
+// import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import Icons from './common/Icons'
-import Modal from './common/Modal'
+// import Icons from './common/Icons'
+// import Modal from './common/Modal'
 
 import { useDisclosure } from '@/hooks'
 import { sorts } from '@/utils'
+import { useRouter } from '@tarojs/taro'
+import IconFont from '@/assets/iconfont'
 
 const Sort = ({ handleChangeRoute }) => {
   //? Assets
   const [isSort, sortHandlers] = useDisclosure()
-  const params = useLocalSearchParams()
-  const insets = useSafeAreaInsets()
+  const { params } = useRouter()
+  // const insets = useSafeAreaInsets()
 
   //? State
   const [sort, setSort] = useState(sorts[0])
@@ -41,11 +43,11 @@ const Sort = ({ handleChangeRoute }) => {
   return (
     <>
       <View className=" px-3">
-        <Pressable className="flex flex-row items-center gap-x-1" onPress={sortHandlers.open}>
-          <Icons.FontAwesome5 name="sort-amount-down-alt" size={16} className="text-neutral-600" />
-          <Text className="text-base text-neutral-600">{sort?.name}</Text>
-        </Pressable>
-        <Modal
+        <View className="flex flex-row items-center gap-x-1" onPress={sortHandlers.open}>
+          <IconFont name="icon-sort" size={34} color="rgb(82 82 82)" />
+          <Text className="text-sm text-neutral-600">{sort?.name}</Text>
+        </View>
+        {/* <Modal
           isShow={isSort}
           onClose={sortHandlers.close}
           animationIn="slideInRight"
@@ -77,7 +79,7 @@ const Sort = ({ handleChangeRoute }) => {
               </View>
             </Modal.Body>
           </Modal.Content>
-        </Modal>
+        </Modal> */}
       </View>
     </>
   )
