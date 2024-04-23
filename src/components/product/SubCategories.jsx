@@ -2,18 +2,11 @@ import { ScrollView, Text, View } from '@tarojs/components'
 
 import ResponsiveImage from '../common/ResponsiveImage'
 import SubCategoriesSkeleton from '../skeleton/SubCategoriesSkeleton'
-import Taro from '@tarojs/taro'
+import { Link } from '..'
 
 const SubCategories = props => {
   //? Props
   const { childCategories, name, isLoading } = props
-
-  //? Handlers
-  const handleRoute = path => {
-    Taro.navigateTo({
-      url: path,
-    })
-  }
 
   //? Render(s)
   return (
@@ -31,10 +24,11 @@ const SubCategories = props => {
             <ScrollView horizontal className="flex gap-3 pb-2">
               <View className="flex flex-row flex-nowrap w-auto space-x-3">
                 {childCategories.map(item => (
-                  <View
+                  <Link
                     key={item._id}
                     className="px-3 pt-4 pb-2 text-center border-2 border-gray-100 rounded-md"
-                    onClick={() => handleRoute(`/pages/products/index?category=${item.slug}`)}
+                    href={`/pages/products/index?category=${item.slug}`}
+                    asChild
                   >
                     <View>
                       <ResponsiveImage
@@ -47,7 +41,7 @@ const SubCategories = props => {
                         {item.name}
                       </Text>
                     </View>
-                  </View>
+                  </Link>
                 ))}
               </View>
             </ScrollView>

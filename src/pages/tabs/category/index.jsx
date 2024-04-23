@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import { View, Text, Image, ScrollView } from '@tarojs/components'
 
-import { ShowWrapper } from '@/components'
+import { ShowWrapper, Link } from '@/components'
 import { useGetCategoriesQuery } from '@/services'
-import Taro from '@tarojs/taro'
 
 export default function CategoryScreen() {
   //? Get Categories Query
@@ -23,12 +22,6 @@ export default function CategoryScreen() {
   //? Handlers
   const handleActive = cat => {
     setActiveMinCat(cat)
-  }
-
-  const handleRoute = path => {
-    Taro.navigateTo({
-      url: path,
-    })
   }
 
   //? Re-Renders
@@ -74,28 +67,24 @@ export default function CategoryScreen() {
                     if (levelTwoCategory.parent === activeMinCat._id) {
                       return (
                         <View className="space-y-3 py-2" key={levelTwoCategory._id}>
-                          <View
-                            onClick={() =>
-                              handleRoute(`/pages/products/index?category=${levelTwoCategory.slug}`)
-                            }
+                          <Link
+                            href={`/pages/products/index?category=${levelTwoCategory.slug}`}
+                            asChild
                           >
                             <Text className="break-words text-neutral-900">
                               {levelTwoCategory.name}
                             </Text>
-                          </View>
+                          </Link>
 
                           <View className="grid grid-cols-3 gap-4">
                             {categories
                               .filter(category => category.parent === levelTwoCategory._id)
                               .map((levelThreeCategory, index) => (
-                                <View
+                                <Link
                                   key={levelThreeCategory._id}
                                   className="flex flex-col items-center gap-y-2"
-                                  onClick={() =>
-                                    handleRoute(
-                                      `/pages/products/index?category=${levelThreeCategory.slug}`
-                                    )
-                                  }
+                                  href={`/pages/products/index?category=${levelThreeCategory.slug}`}
+                                  asChild
                                 >
                                   <View className="flex items-center justify-center w-full aspect-square rounded-full border-solid border-2 border-slate-200 overflow-hidden">
                                     <Image
@@ -107,7 +96,7 @@ export default function CategoryScreen() {
                                   <Text className="text-gray-700 text-sm">
                                     {levelThreeCategory.name}
                                   </Text>
-                                </View>
+                                </Link>
                               ))}
                           </View>
                         </View>

@@ -1,18 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import Taro from '@tarojs/taro'
-
-const prepareParams = params => {
-  return Object.keys(params)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-    .join('&')
-}
+import qs from 'qs'
 
 const taroRequestBaseQuery =
   ({ baseUrl, prepareHeaders }) =>
   async (args, { getState, ...extraOptions }) => {
     const { url, method, body, headers = {}, params, ...rest } = args
 
-    const fullUrl = baseUrl + url + (params ? '?' + prepareParams(params) : '')
+    const fullUrl = baseUrl + url + (params ? '?' + qs.stringify(params) : '')
 
     const response = await Taro.request({
       url: fullUrl,

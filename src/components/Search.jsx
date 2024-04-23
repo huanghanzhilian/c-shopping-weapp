@@ -12,9 +12,9 @@ export default function Search(props) {
   return (
     <View
       onPress={handleSearch}
-      className="flex-1 flex flex-row rounded-md bg-zinc-200/80 justify-between items-center p-1 mr-4"
+      className="flex-1 flex flex-row rounded-md bg-zinc-200/80 justify-between p-1.5 items-center mr-4"
     >
-      <Text className="flex-grow py-1 px-3 text-left bg-transparent outline-none cursor-pointer text-gray-400 focus:border-none">
+      <Text className="flex-grow text-left bg-transparent outline-none cursor-pointer text-gray-400 text-sm focus:border-none">
         善假于物，用好搜索...
       </Text>
       <IconFont name="icon-search" size={34} color="#1F2937" />
