@@ -7,6 +7,7 @@ import Skeleton from '../common/Skeleton'
 
 import { useGetProductsQuery } from '@/services'
 import IconFont from '@/assets/iconfont'
+import { Link } from '..'
 
 export default function MostFavouraiteProducts(props) {
   //? Props
@@ -56,7 +57,15 @@ export default function MostFavouraiteProducts(props) {
                 </Skeleton.Items>
               ))
           : products?.map((product, index) => (
-              <View key={product._id} className="p-1 transition border border-gray-50">
+              <Link
+                href={{
+                  pathname: `/pages/products/item/index`,
+                  params: { id: product._id },
+                }}
+                asChild
+                key={product._id}
+                className="p-1 transition border border-gray-50"
+              >
                 <View className="flex flex-row items-center gap-x-2">
                   <Text className="text-base">{product.rating.toFixed(1)}</Text>
                   <IconFont name="icon-fontAwesome_star" size={30} color="rgb(251 191 36)" />
@@ -74,7 +83,7 @@ export default function MostFavouraiteProducts(props) {
                     price={product.price}
                   />
                 </View>
-              </View>
+              </Link>
             ))}
       </View>
     </FeedSectionContainer>

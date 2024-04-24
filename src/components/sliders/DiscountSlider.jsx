@@ -7,6 +7,7 @@ import ProductPrice from '../product/ProductPrice'
 
 import { useGetProductsQuery } from '@/services'
 import Taro from '@tarojs/taro'
+import { Link } from '..'
 
 export default function DiscountSlider(props) {
   //? Props
@@ -73,7 +74,15 @@ export default function DiscountSlider(props) {
         <ScrollView scrollX>
           <View className="flex flex-row flex-nowrap w-auto">
             {products.map((item, index) => (
-              <View key={item._id} className="w-fit h-fit bg-white mx-0.5 py-3">
+              <Link
+                href={{
+                  pathname: `/pages/products/item/index`,
+                  params: { id: item._id },
+                }}
+                key={item._id}
+                asChild
+                className="w-fit h-fit bg-white mx-0.5 py-3"
+              >
                 <Image src={item?.images[0]?.url} className="w-32 h-32" />
                 <View className="flex flex-row px-2 mt-1.5 justify-evenly items-start gap-x-2 ">
                   <DiscountProduct discount={item.discount} />
@@ -83,7 +92,7 @@ export default function DiscountSlider(props) {
                     price={item?.price}
                   />
                 </View>
-              </View>
+              </Link>
             ))}
           </View>
         </ScrollView>

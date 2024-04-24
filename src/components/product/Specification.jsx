@@ -1,4 +1,4 @@
-import { Pressable, Text, View, useWindowDimensions } from '@tarojs/components'
+import { Pressable, Text, View, useWindowDimensions } from 'react-native'
 import RenderHtml from 'react-native-render-html'
 
 import Icons from '../common/Icons'

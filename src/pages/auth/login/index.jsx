@@ -1,10 +1,9 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-// import { Link, Stack, useRouter } from 'expo-router'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { Button, Text, View } from '@tarojs/components'
+import { Text, View } from '@tarojs/components'
 
-import { HandleResponse, Logo, TextField, Buttons } from '@/components'
+import { HandleResponse, Logo, TextField, Buttons, Link } from '@/components'
 import { useAppDispatch } from '@/hooks'
 import { useLoginMutation } from '@/services'
 import { userLogin } from '@/store'
@@ -14,11 +13,9 @@ import Taro from '@tarojs/taro'
 export default function LoginScreen() {
   //? Assets
   const dispatch = useAppDispatch()
-  // const router = useRouter()
 
   //? Login User
   const [login, { data, isSuccess, isError, isLoading, error }] = useLoginMutation()
-  console.log('error', error)
 
   //? Form Hook
   const {
@@ -52,12 +49,6 @@ export default function LoginScreen() {
 
   return (
     <>
-      {/* <Stack.Screen
-        options={{
-          title: '登录',
-          headerBackTitleVisible: false,
-        }}
-      /> */}
       {/*  Handle Login Response */}
       {(isSuccess || isError) && (
         <HandleResponse
@@ -71,7 +62,7 @@ export default function LoginScreen() {
       <View className="h-[100%]  bg-white pt-10">
         <View className="w-[100vw] px-8 py-6 space-y-4">
           <Logo className="mx-auto block w-40 h-16" />
-          <Text className=" block">登录</Text>
+          <Text className="block text-neutral-700">登录</Text>
           <View className="space-y-0">
             <TextField
               errors={formErrors.email}
@@ -94,9 +85,13 @@ export default function LoginScreen() {
 
           <View className="flex flex-row">
             <Text className="inline mr-2 text-gray-800 text-xs">我还没有账户</Text>
-            <View replace href="/register" className="text-blue-400 text-xs">
+            <Link
+              openType="redirectTo"
+              href="/pages/auth/register/index"
+              className="text-blue-400 text-xs"
+            >
               去注册
-            </View>
+            </Link>
           </View>
         </View>
       </View>

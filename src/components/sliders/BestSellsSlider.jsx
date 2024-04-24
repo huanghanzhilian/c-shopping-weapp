@@ -5,6 +5,7 @@ import Skeleton from '../common/Skeleton'
 
 import { useGetProductsQuery } from '@/services'
 import { truncate } from '@/utils'
+import { Link } from '..'
 
 const generateGroup = (arr, countNum) => {
   const result = []
@@ -59,9 +60,17 @@ export default function BestSellsSlider(props) {
         <ScrollView scrollX>
           <View className="flex flex-row flex-nowrap w-auto">
             {products.map((item, index) => (
-              <View className="mr-4">
+              <View className="mr-4" key={index}>
                 {item.map((row, rowIndex) => (
-                  <View key={row._id} className="px-1 py-4 w-60">
+                  <Link
+                    href={{
+                      pathname: `/pages/products/item/index`,
+                      params: { id: row._id },
+                    }}
+                    asChild
+                    key={row._id}
+                    className="px-1 py-4 w-60"
+                  >
                     <View className="flex flex-row">
                       <Image src={row.images[0].url} className="w-24 h-24 shrink-0 mr-2" />
                       <View className="flex flex-auto flex-row items-center border-b border-gray-200">
@@ -71,7 +80,7 @@ export default function BestSellsSlider(props) {
                         <Text className="flex-auto">{truncate(row.title, 15)}</Text>
                       </View>
                     </View>
-                  </View>
+                  </Link>
                 ))}
               </View>
             ))}

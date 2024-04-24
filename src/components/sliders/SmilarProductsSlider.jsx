@@ -1,7 +1,5 @@
-import { FlashList } from '@shopify/flash-list'
-import { Pressable, Text, View } from 'react-native'
-
 import ProductCard from '../product/ProductCard'
+import { ScrollView, Text, View } from '@tarojs/components'
 
 const SmilarProductsSlider = props => {
   //? Props
@@ -10,17 +8,15 @@ const SmilarProductsSlider = props => {
   //? Render(s)
   return (
     <View className="px-3 py-4 overflow-hidden">
-      <Text className="mb-3 w-24">{smilarProducts.title}</Text>
-      <FlashList
-        data={smilarProducts?.products || []}
-        renderItem={({ item, index }) => (
-          <Pressable key={item._id} className="w-[80vw] px-2">
+      <Text className="mb-3 w-24 block">{smilarProducts.title}</Text>
+
+      <ScrollView scrollX className="whitespace-nowrap">
+        {smilarProducts?.products.map((item, index) => (
+          <View key={item._id} className="w-[80vw] inline-block px-2">
             <ProductCard className="" product={item} slide />
-          </Pressable>
-        )}
-        horizontal
-        estimatedItemSize={200}
-      />
+          </View>
+        ))}
+      </ScrollView>
     </View>
   )
 }

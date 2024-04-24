@@ -55,8 +55,8 @@ const ProductCard = props => {
           </View>
         </View>
         <View className="flex-1 space-y-3 w-full">
-          <Text className="text-sm leading-6 text-gray-800 break-all h-14">
-            {truncate(product.title, 70)}
+          <Text className="text-sm leading-6 text-gray-800 break-all whitespace-normal h-14">
+            {truncate(product.title, 40)}
           </Text>
           <View className="flex flex-row justify-between">
             <View>

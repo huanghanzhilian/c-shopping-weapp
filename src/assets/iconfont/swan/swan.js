@@ -1,6 +1,6 @@
 Component({
   properties: {
-    // icon-sort | icon-filter | icon-plus | icon-save | icon-locationcity | icon-custom-user | icon-clock-circle-o | icon-logout | icon-edit | icon-tubiaozhizuomoban- | icon-Comment | icon-handbag | icon-cart | icon-notification | icon-search | icon-fontAwesome_star | icon-arrow
+    // icon-round-check_circle_o | icon-sort | icon-filter | icon-plus | icon-save | icon-locationcity | icon-custom-user | icon-clock-circle-o | icon-logout | icon-edit | icon-tubiaozhizuomoban- | icon-Comment | icon-handbag | icon-cart | icon-notification | icon-search | icon-fontAwesome_star | icon-arrow
     name: {
       type: String,
     },

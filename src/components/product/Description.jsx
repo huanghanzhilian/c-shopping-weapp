@@ -1,9 +1,8 @@
-import { Pressable, Text, View } from '@tarojs/components'
-
-import Icons from '../common/Icons'
+import { Text, View } from '@tarojs/components'
 
 import { useDisclosure } from '@/hooks'
 import { truncate } from '@/utils'
+import IconFont from '@/assets/iconfont'
 
 const Description = props => {
   //? Porps
@@ -14,30 +13,28 @@ const Description = props => {
 
   //? Render(s)
   return (
-    <Pressable>
+    <View>
       <View className="px-3">
-        <Text className="mb-3 lg:border-b-2 lg:border-red-500 w-fit">介绍</Text>
-        <Text className="text-sm leading-6 tracking-wider text-gray-600 lg:text-sm lg:leading-8">
+        <Text className="mb-3 block w-fit">介绍</Text>
+        <Text className="text-sm leading-6 tracking-wider text-gray-500">
           {isShowDesc ? description : truncate(description, 300)}
         </Text>
         {description.length > 300 && (
-          <Pressable
+          <View
             className="flex flex-row items-center justify-end py-2"
-            onPress={showDescHandlers.toggle}
+            onClick={showDescHandlers.toggle}
           >
             {isShowDesc ? (
               <Text className="text-sm text-sky-400">收起</Text>
             ) : (
               <Text className="text-sm text-sky-400">查看更多</Text>
             )}
-            {!isShowDesc && (
-              <Icons.MaterialIcons name="keyboard-arrow-right" size={24} className="text-sky-400" />
-            )}
-          </Pressable>
+            {!isShowDesc && <IconFont name="icon-arrow" size={30} className="text-sky-400" />}
+          </View>
         )}
       </View>
       <View className="section-divide-y " />
-    </Pressable>
+    </View>
   )
 }
 

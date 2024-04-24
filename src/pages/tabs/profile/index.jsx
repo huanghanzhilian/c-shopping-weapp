@@ -46,7 +46,7 @@ export default function ProfileScreen() {
   //？Render(s)
   return (
     <>
-      <AuthWrapper tips="享受购物">
+      <AuthWrapper tips="享受购物（只是演示而已，为技术分享）">
         <ScrollView className="bg-white">
           <View
             style={{ paddingTop: `${statusBarHeight + 160}rpx` }}

@@ -1,6 +1,6 @@
 import { View, Text, ScrollView } from '@tarojs/components'
 
-import { AuthWrapper, Button, CartInfo, CartItem, EmptyCart } from '@/components'
+import { AuthWrapper, CartInfo, CartItem, EmptyCart } from '@/components'
 import { useAppSelector, useUserInfo } from '@/hooks'
 import { formatNumber } from '@/utils'
 
@@ -22,13 +22,7 @@ export default function CartScreen() {
 
   return (
     <>
-      {/* <Stack.Screen
-        options={{
-          title: `Cart(${cartItems.length} items)`,
-          headerBackTitleVisible: false,
-        }}
-      /> */}
-      <AuthWrapper>
+      <AuthWrapper tips="享受购物（只是演示而已，为技术分享）">
         {cartItems.length === 0 ? (
           <>
             <View className="h-full space-y-3 bg-white">

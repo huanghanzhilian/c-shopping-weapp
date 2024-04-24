@@ -1,5 +1,4 @@
-import { View } from '@tarojs/components'
-import Swiper from 'react-native-swiper'
+import { View, Swiper, SwiperItem } from '@tarojs/components'
 
 import ResponsiveImage from '../common/ResponsiveImage'
 
@@ -10,15 +9,24 @@ const ImageGallery = props => {
   //? Render(s)
   return (
     <View className="mb-5">
-      <Swiper className="h-[100vw]" showsPagination activeDotColor="#1D4ED8" dotColor="#E5E7EB">
+      <Swiper
+        className="h-[100vw] w-[100vw]"
+        indicatorColor="#E5E7EB"
+        indicatorActiveColor="#1D4ED8"
+        circular
+        indicatorDots
+        autoplay
+      >
         {images.map((image, index) => (
-          <ResponsiveImage
-            key={index}
-            className="h-[100vw] w-full"
-            imageStyles="h-[100vw] w-full"
-            source={image.url}
-            alt={productName}
-          />
+          <SwiperItem key={index}>
+            <ResponsiveImage
+              key={index}
+              className="h-[100vw] w-full"
+              imageStyles="h-[100vw] w-full"
+              src={image.url}
+              alt={productName}
+            />
+          </SwiperItem>
         ))}
       </Swiper>
     </View>
