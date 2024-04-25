@@ -27,7 +27,9 @@ export default function SingleProductScreen() {
   // const router = useRouter()
   const { params } = useRouter()
   const id = params?.id?.toString() ?? ''
-  const { statusBarHeight } = getSystemInfoSync()
+  const { statusBarHeight, safeArea } = getSystemInfoSync()
+
+  console.log('safeArea', safeArea)
 
   //? Store
   const { totalItems } = useAppSelector(state => state.cart)
@@ -132,9 +134,9 @@ export default function SingleProductScreen() {
 
               <SmilarProductsSlider smilarProducts={smilarProducts} />
               <View className="section-divide-y h-2 bg-gray-100" />
-              {/* <Specification specification={product.specification} /> */}
+              <Specification specification={product.specification} />
 
-              {/* <View className="section-divide-y h-2 bg-gray-100" /> */}
+              <View className="section-divide-y h-2 bg-gray-100" />
 
               {/* <Reviews
                 numReviews={product.numReviews}
@@ -144,8 +146,8 @@ export default function SingleProductScreen() {
             </View>
           </ScrollView>
           {product.inStock > 0 && (
-            <View className="fixed left-0 right-0 z-20" style={{ bottom: 0 }}>
-              {/* <AddToCartOperation product={product} /> */}
+            <View className="fixed left-0 right-0 bottom-0 z-20 pb-2 bg-white">
+              <AddToCartOperation product={product} />
             </View>
           )}
         </View>

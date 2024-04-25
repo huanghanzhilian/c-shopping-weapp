@@ -1,4 +1,4 @@
-// import { router } from 'expo-router'
+import Taro from '@tarojs/taro'
 import { useGetUserInfoQuery } from '@/services'
 import { userLogout } from '@/store'
 import { useAppDispatch } from './useRedux'
@@ -16,7 +16,9 @@ export default function useUserInfo() {
 
   const mustAuthAction = nextAction => {
     if (!isLoginVerify) {
-      return router.push('/login')
+      return Taro.navigateTo({
+        url: '/pages/auth/login/index',
+      })
     }
     nextAction()
   }

@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
-import { View } from 'react-native'
-import Toast from 'react-native-toast-message'
+import { View } from '@tarojs/components'
+// import Toast from 'react-native-toast-message'
 
 import CartButtons from './CartButtons'
-import { Button } from '../common/Buttons'
+import { Buttons } from '../common/Buttons'
 import ProductPrice from '../product/ProductPrice'
 
 import { useAppDispatch, useAppSelector, useUserInfo } from '@/hooks'
 import { addToCart } from '@/store'
 import { exsitItem } from '@/utils'
+import Taro from '@tarojs/taro'
 
 const AddToCartOperation = props => {
   //? Props
@@ -36,9 +37,9 @@ const AddToCartOperation = props => {
   const handleAddItem = () => {
     mustAuthAction(() => {
       if (product.inStock === 0)
-        return Toast.show({
-          type: 'error',
-          text2: '此商品缺货',
+        return Taro.showToast({
+          title: '此商品缺货',
+          duration: 2000,
         })
 
       dispatch(
@@ -60,7 +61,7 @@ const AddToCartOperation = props => {
 
   //? Render(s)
   return (
-    <View className="flex flex-row items-center justify-between p-3 bg-white border-t border-gray-300 px-5 shadow-3xl ">
+    <View className="flex justify-between  p-3 bg-white border-t border-gray-300 px-5 shadow-3xl ">
       {currentItemInCart ? (
         <View className="flex gap-x-4">
           <View className="w-44">
@@ -68,9 +69,9 @@ const AddToCartOperation = props => {
           </View>
         </View>
       ) : (
-        <Button onPress={handleAddItem} className="px-12 text-sm btn">
+        <Buttons onClick={handleAddItem} className="px-12 text-sm btn ml-0">
           添加到购物车
-        </Button>
+        </Buttons>
       )}
 
       <View className="min-w-fit">

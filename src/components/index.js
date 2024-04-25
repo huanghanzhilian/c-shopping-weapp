@@ -66,10 +66,10 @@ export { default as InitialStore } from './product/InitialStore'
 export { default as OutOfStock } from './product/OutOfStock'
 export { default as Info } from './product/Info'
 export { default as Description } from './product/Description'
-// export { default as Specification } from './product/Specification'
+export { default as Specification } from './product/Specification'
 
 // //* CART COMPONENTS
-// export { default as AddToCartOperation } from './cart/AddToCartOperation'
+export { default as AddToCartOperation } from './cart/AddToCartOperation'
 export { default as CartButtons } from './cart/CartButtons'
 export { default as CartItem } from './cart/CartItem'
 export { default as CartInfo } from './cart/CartInfo'
