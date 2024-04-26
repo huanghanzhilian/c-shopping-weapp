@@ -1,6 +1,11 @@
 /* eslint-disable */
 
 import React from 'react'
+import IconChat1196057Easyiconnet1 from './IconChat1196057Easyiconnet1'
+import IconOfficialofficialtext from './IconOfficialofficialtext'
+import IconStomachRuler from './IconStomachRuler'
+import IconDelete from './IconDelete'
+import IconMinus from './IconMinus'
 import IconRoundCheckCircleO from './IconRoundCheckCircleO'
 import IconSort from './IconSort'
 import IconFilter from './IconFilter'
@@ -19,6 +24,11 @@ import IconNotification from './IconNotification'
 import IconSearch from './IconSearch'
 import IconFontAwesomeStar from './IconFontAwesomeStar'
 import IconArrow from './IconArrow'
+export { default as IconChat1196057Easyiconnet1 } from './IconChat1196057Easyiconnet1'
+export { default as IconOfficialofficialtext } from './IconOfficialofficialtext'
+export { default as IconStomachRuler } from './IconStomachRuler'
+export { default as IconDelete } from './IconDelete'
+export { default as IconMinus } from './IconMinus'
 export { default as IconRoundCheckCircleO } from './IconRoundCheckCircleO'
 export { default as IconSort } from './IconSort'
 export { default as IconFilter } from './IconFilter'
@@ -40,6 +50,16 @@ export { default as IconArrow } from './IconArrow'
 
 const IconFont = ({ name, ...rest }) => {
   switch (name) {
+    case 'icon-chat1196057easyiconnet1':
+      return <IconChat1196057Easyiconnet1 {...rest} />
+    case 'icon-Officialofficialtext':
+      return <IconOfficialofficialtext {...rest} />
+    case 'icon-StomachRuler':
+      return <IconStomachRuler {...rest} />
+    case 'icon-delete':
+      return <IconDelete {...rest} />
+    case 'icon-minus':
+      return <IconMinus {...rest} />
     case 'icon-round-check_circle_o':
       return <IconRoundCheckCircleO {...rest} />
     case 'icon-sort':

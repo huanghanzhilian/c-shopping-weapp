@@ -35,7 +35,7 @@ export default defineAppConfig({
         pagePath: 'pages/tabs/cart/index',
         selectedIconPath: 'assets/tabbar/tabbar_cart_on.png',
         iconPath: 'assets/tabbar/tabbar_cart.png',
-        text: '购物车',
+        text: '资料库',
       },
       {
         pagePath: 'pages/tabs/profile/index',

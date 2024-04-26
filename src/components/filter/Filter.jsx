@@ -114,7 +114,7 @@ const Filter = props => {
 
             <View className="divide-y">
               <View className="flex flex-row justify-between items-center py-2.5">
-                <Text className="font-medium text-gray-700 w-3/4">仅限库存商品</Text>
+                <Text className="font-medium text-gray-700 w-3/4">仅限库存x品</Text>
                 <Switch
                   value={filters.inStock}
                   onValueChange={value =>
@@ -123,7 +123,7 @@ const Filter = props => {
                 />
               </View>
               <View className="flex flex-row justify-between items-center py-2.5">
-                <Text className="font-medium text-gray-700 w-3/4">仅限特价商品</Text>
+                <Text className="font-medium text-gray-700 w-3/4">仅限特价x品</Text>
                 <Switch
                   value={filters.discount}
                   onValueChange={value =>

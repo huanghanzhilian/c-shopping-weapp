@@ -104,11 +104,9 @@ export default function ProductsScreen() {
               </View>
 
               <View className="flex flex-row justify-between py-2">
-                <Text className="text-sm text-neutral-600">所有商品</Text>
+                <Text className="text-sm text-neutral-600">所有x品</Text>
 
-                <Text className="text-sm text-neutral-600">
-                  {data?.data?.productsLength} 件商品
-                </Text>
+                <Text className="text-sm text-neutral-600">{data?.data?.productsLength} 件x品</Text>
               </View>
             </View>
             {/* Products */}
@@ -130,7 +128,7 @@ export default function ProductsScreen() {
                 </View>
               </ScrollView>
             ) : (
-              <Text className="text-center text-red-500">没有找到商品</Text>
+              <Text className="text-center text-red-500">没有找到x品</Text>
             )}
           </View>
         </View>

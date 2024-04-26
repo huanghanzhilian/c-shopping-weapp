@@ -9,7 +9,7 @@ export const Buttons = props => {
   return (
     <Button
       disabled={isLoading}
-      className={`min-h-12 max flex items-center justify-center outline-none rounded-md active:scale-[.98] bg-red-500 button ${isRounded ? 'rounded-3xl' : ''} ${className}
+      className={` min-h-10 max flex items-center justify-center outline-none rounded-md active:scale-[.98] bg-red-500 button ${isRounded ? 'rounded-3xl' : ''} ${className}
     `}
       {...restPropps}
     >

@@ -61,7 +61,7 @@ export default function RegisterScreen() {
       )}
       <ScrollView className="h-[100%] bg-white pt-10">
         <View className="w-[100vw] px-8 py-6 space-y-4">
-          <Logo className="mx-auto w-40 h-16" />
+          <Logo className="mx-auto block w-40 h-16" />
           <Text className="block text-neutral-700">注册</Text>
           <View className="space-y-0">
             <TextField

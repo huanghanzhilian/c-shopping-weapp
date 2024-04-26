@@ -40,7 +40,7 @@ export default function DiscountSlider(props) {
 
   //? Render(s)
   return (
-    <FeedSectionContainer title="折扣商品" showMore onJumptoMore={handleJumptoMore}>
+    <FeedSectionContainer title="x扣x品" showMore onJumptoMore={handleJumptoMore}>
       {isLoading ? (
         <ScrollView scrollX>
           <View className="flex flex-row flex-nowrap w-auto space-x-2">
@@ -81,10 +81,10 @@ export default function DiscountSlider(props) {
                 }}
                 key={item._id}
                 asChild
-                className="w-fit h-fit bg-white mx-0.5 py-3"
+                className="w-fit h-fit bg-white mx-0.5 py-3 px-2"
               >
                 <Image src={item?.images[0]?.url} className="w-32 h-32" />
-                <View className="flex flex-row px-2 mt-1.5 justify-evenly items-start gap-x-2 ">
+                <View className="flex flex-row mt-1.5 justify-evenly items-start gap-x-2 ">
                   <DiscountProduct discount={item.discount} />
                   <ProductPrice
                     inStock={item?.inStock}

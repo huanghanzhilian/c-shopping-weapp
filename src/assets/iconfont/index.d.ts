@@ -3,6 +3,11 @@ import React, { FunctionComponent } from 'react'
 
 interface Props {
   name:
+    | 'icon-chat1196057easyiconnet1'
+    | 'icon-Officialofficialtext'
+    | 'icon-StomachRuler'
+    | 'icon-delete'
+    | 'icon-minus'
     | 'icon-round-check_circle_o'
     | 'icon-sort'
     | 'icon-filter'

@@ -38,10 +38,10 @@ const OrderCard = props => {
             <Text className="ml-2 text-sm text-black">{order._id}</Text>
           </View>
           <View className="flex flex-row items-center gap-x-1">
+            <Text className="">¥</Text>
             <Text className="text-black">
               {formatNumber(order.totalPrice - order.totalDiscount)}
             </Text>
-            <Text className="">¥</Text>
           </View>
         </View>
         <View className="flex flex-row flex-wrap py-5 gap-x-5 gap-y-3 lg:border-t lg:border-gray-200 lg:px-3">

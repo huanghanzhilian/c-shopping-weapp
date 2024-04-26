@@ -1,6 +1,4 @@
-// import { Link, Stack, useLocalSearchParams, useRouter } from 'expo-router'
 import { View, Text, ScrollView } from '@tarojs/components'
-// import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { getSystemInfoSync, useRouter } from '@tarojs/taro'
 
 import {
@@ -17,19 +15,18 @@ import {
   ShowWrapper,
   SmilarProductsSlider,
   Specification,
+  ProductPrice,
 } from '@/components'
-import { useAppSelector } from '@/hooks'
+import { useAppSelector, useTitle } from '@/hooks'
 import { useGetSingleProductDetailQuery } from '@/services'
 import { formatNumber } from '@/utils'
+import { useEffect } from 'react'
 
 export default function SingleProductScreen() {
   //? Assets
-  // const router = useRouter()
   const { params } = useRouter()
   const id = params?.id?.toString() ?? ''
-  const { statusBarHeight, safeArea } = getSystemInfoSync()
-
-  console.log('safeArea', safeArea)
+  const setTitle = useTitle('')
 
   //? Store
   const { totalItems } = useAppSelector(state => state.cart)
@@ -53,37 +50,13 @@ export default function SingleProductScreen() {
     }
   )
 
+  //? Re-Renders
+  useEffect(() => {
+    setTitle(product?.title || '')
+  }, [product?.title])
+
   return (
     <>
-      {/* <Stack.Screen
-        options={{
-          headerRight: () => (
-            <>
-              <Link href="/cart" asChild className="relative">
-                <Pressable>
-                  <Icons.AntDesign
-                    name="shoppingcart"
-                    size={24}
-                    color="#1F2937"
-                    className="px-2 py-1"
-                  />
-                  {formatNumber(totalItems) && (
-                    <Pressable className="absolute outline outline-2 bottom-3.5 left-5 bg-red-500 rounded-md w-5 h-5 p-0.5">
-                      <Text className=" text-center text-xs text-white">
-                        {formatNumber(totalItems)}
-                      </Text>
-                    </Pressable>
-                  )}
-                </Pressable>
-              </Link>
-
-              <Icons.Feather name="heart" size={20} color="#1F2937" className="px-2 py-1" />
-            </>
-          ),
-          title: product?.title || '',
-          headerBackTitleVisible: false,
-        }}
-      /> */}
       <ShowWrapper
         error={error}
         isError={isError}
@@ -92,7 +65,7 @@ export default function SingleProductScreen() {
         isSuccess={isSuccess}
         type="detail"
       >
-        <View className="h-full bg-white relative">
+        <View className={`h-full bg-white relative ${product.inStock > 0 ? ' pb-20' : 'pb-0'}`}>
           <ScrollView className="">
             <View className="py-4 flex flex-col gap-y-4 ">
               <View className="h-fit">
@@ -103,11 +76,20 @@ export default function SingleProductScreen() {
                   inStock={product.inStock}
                   productName={product.title}
                 />
-                <View className="lg:col-span-4 ">
+                <View className="">
                   {/* title */}
                   <Text className="p-4 block text-base font-semibold leading-8 tracking-wide text-black/80 ">
                     {product.title}
                   </Text>
+
+                  <View className="p-4 pt-0">
+                    <ProductPrice
+                      inStock={product.inStock}
+                      discount={product.discount}
+                      price={product.price}
+                      singleProduct
+                    />
+                  </View>
 
                   <View className="section-divide-y h-2 bg-gray-100" />
 

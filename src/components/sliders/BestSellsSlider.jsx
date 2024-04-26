@@ -36,7 +36,7 @@ export default function BestSellsSlider(props) {
   //? Render(s)
 
   return (
-    <FeedSectionContainer title="畅销商品">
+    <FeedSectionContainer title="畅销x品">
       {isLoading ? (
         <View className="flex flex-row flex-nowrap w-auto">
           {Array(2)

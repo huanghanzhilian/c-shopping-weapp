@@ -7,6 +7,8 @@ import ResponsiveImage from '../common/ResponsiveImage'
 import SpecialSell from '../product/SpecialSell'
 
 import { formatNumber } from '@/utils'
+import IconFont from '@/assets/iconfont'
+import { Link } from '..'
 
 const CartItem = props => {
   //? Props
@@ -20,11 +22,11 @@ const CartItem = props => {
         <ResponsiveImage
           dimensions="w-28 h-28"
           imageStyles="w-28 h-28"
-          source={item.img.url}
+          src={item.img.url}
           alt={item.name}
         />
 
-        <View className="mx-auto">
+        <View className="mx-auto w-fit">
           <SpecialSell discount={item.discount} inStock={item.inStock} />
         </View>
 
@@ -35,9 +37,17 @@ const CartItem = props => {
 
       {/* name */}
       <View className="flex-auto">
-        <Text className="mb-3 text-sm">
-          <Text href={`/products/${item.productID}`}>{item.name}</Text>
-        </Text>
+        <View className="mb-3 ">
+          <Link
+            className="text-sm"
+            href={{
+              pathname: `/pages/products/item/index`,
+              params: { id: item.productID },
+            }}
+          >
+            {item.name}
+          </Link>
+        </View>
 
         {/* info */}
         <View className="space-y-3">
@@ -47,22 +57,22 @@ const CartItem = props => {
                 className="inline-block w-5 h-5 shadow rounded-xl"
                 style={{ backgroundColor: item.color.hashCode }}
               />
-              <Text>{item.color.name}</Text>
+              <Text className="font-light text-sm">{item.color.name}</Text>
             </View>
           )}
           {item.size && (
             <View className="flex flex-row items-center gap-x-2">
-              {/* <Icons.MaterialIcons name="rule" size={20} className="icon" /> */}
-              <Text className="">{item.size.size}</Text>
+              <IconFont name="icon-StomachRuler" size={40} />
+              <Text className="font-light text-sm">{item.size.size}</Text>
             </View>
           )}
           <View className="flex flex-row items-center gap-x-2">
-            {/* <Icons.Ionicons name="shield-checkmark-outline" size={20} className="icon" /> */}
-            <Text className="font-light">正品保证和发货保证</Text>
+            <IconFont name="icon-Officialofficialtext" size={30} />
+            <Text className="font-light text-sm">正品保证和发货保证</Text>
           </View>
           <View className="flex flex-row items-center gap-x-2">
-            {/* <Icons.MaterialIcons name="save" size={20} className="icon text-sky-400" /> */}
-            <Text className="font-light">仓库有售</Text>
+            <IconFont name="icon-save" size={40} color="rgba(15,118,110,1)" />
+            <Text className="font-light text-sm">仓库有</Text>
           </View>
           {item.discount > 0 ? (
             <View>
@@ -70,8 +80,8 @@ const CartItem = props => {
             </View>
           ) : (
             <View className="flex items-center gap-x-2">
+              <Text className="text-sm text-gray-700">¥</Text>
               <Text className="text-sm text-gray-700">{formatNumber(item.price)}</Text>
-              <Text className="">¥</Text>
             </View>
           )}
         </View>

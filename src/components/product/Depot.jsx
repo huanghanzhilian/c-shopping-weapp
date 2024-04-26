@@ -10,8 +10,8 @@ const Depot = ({ inStock }) => {
   } else if (inStock > 10) {
     return (
       <View className="flex flex-row items-center text-teal-400 gap-x-1">
-        <IconFont name="icon-save" size={40} color="rgb(15 118 110)" />
-        <Text className="text-teal-700 text-sm">仓库有售</Text>
+        <IconFont name="icon-save" size={40} color="rgba(15,118,110,1)" />
+        <Text className="text-teal-700 text-sm">仓库有</Text>
       </View>
     )
   } else if (inStock === 0) {

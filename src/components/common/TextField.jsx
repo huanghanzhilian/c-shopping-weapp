@@ -25,7 +25,7 @@ export default function TextField(props) {
     <View className="w-full">
       {label && <Text className="text-xs text-gray-700 ">{label}</Text>}
       <Input
-        className="px-3 py-2.5 transition-colors border border-solid border-gray-400 rounded-md outline-none bg-zinc-50/30 focus:border-blue-600 leading-none"
+        className="px-3 py-2 transition-colors border border-solid border-gray-400 rounded-md outline-none bg-zinc-50/30 focus:border-blue-600 leading-none"
         id={name}
         value={field?.value}
         name={field.name}

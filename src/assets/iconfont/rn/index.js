@@ -2,6 +2,11 @@
 
 import React from 'react'
 
+import IconChat1196057Easyiconnet1 from './IconChat1196057Easyiconnet1'
+import IconOfficialofficialtext from './IconOfficialofficialtext'
+import IconStomachRuler from './IconStomachRuler'
+import IconDelete from './IconDelete'
+import IconMinus from './IconMinus'
 import IconRoundCheckCircleO from './IconRoundCheckCircleO'
 import IconSort from './IconSort'
 import IconFilter from './IconFilter'
@@ -20,6 +25,11 @@ import IconNotification from './IconNotification'
 import IconSearch from './IconSearch'
 import IconFontAwesomeStar from './IconFontAwesomeStar'
 import IconArrow from './IconArrow'
+export { default as IconChat1196057Easyiconnet1 } from './IconChat1196057Easyiconnet1'
+export { default as IconOfficialofficialtext } from './IconOfficialofficialtext'
+export { default as IconStomachRuler } from './IconStomachRuler'
+export { default as IconDelete } from './IconDelete'
+export { default as IconMinus } from './IconMinus'
 export { default as IconRoundCheckCircleO } from './IconRoundCheckCircleO'
 export { default as IconSort } from './IconSort'
 export { default as IconFilter } from './IconFilter'
@@ -41,42 +51,52 @@ export { default as IconArrow } from './IconArrow'
 
 let IconFont = ({ name, ...rest }) => {
   switch (name) {
+    case 'icon-chat1196057easyiconnet1':
+      return <IconChat1196057Easyiconnet1 key="1" {...rest} />
+    case 'icon-Officialofficialtext':
+      return <IconOfficialofficialtext key="2" {...rest} />
+    case 'icon-StomachRuler':
+      return <IconStomachRuler key="3" {...rest} />
+    case 'icon-delete':
+      return <IconDelete key="4" {...rest} />
+    case 'icon-minus':
+      return <IconMinus key="5" {...rest} />
     case 'icon-round-check_circle_o':
-      return <IconRoundCheckCircleO key="1" {...rest} />
+      return <IconRoundCheckCircleO key="6" {...rest} />
     case 'icon-sort':
-      return <IconSort key="2" {...rest} />
+      return <IconSort key="7" {...rest} />
     case 'icon-filter':
-      return <IconFilter key="3" {...rest} />
+      return <IconFilter key="8" {...rest} />
     case 'icon-plus':
-      return <IconPlus key="4" {...rest} />
+      return <IconPlus key="9" {...rest} />
     case 'icon-save':
-      return <IconSave key="5" {...rest} />
+      return <IconSave key="10" {...rest} />
     case 'icon-locationcity':
-      return <IconLocationcity key="6" {...rest} />
+      return <IconLocationcity key="11" {...rest} />
     case 'icon-custom-user':
-      return <IconCustomUser key="7" {...rest} />
+      return <IconCustomUser key="12" {...rest} />
     case 'icon-clock-circle-o':
-      return <IconClockCircleO key="8" {...rest} />
+      return <IconClockCircleO key="13" {...rest} />
     case 'icon-logout':
-      return <IconLogout key="9" {...rest} />
+      return <IconLogout key="14" {...rest} />
     case 'icon-edit':
-      return <IconEdit key="10" {...rest} />
+      return <IconEdit key="15" {...rest} />
     case 'icon-tubiaozhizuomoban-':
-      return <IconTubiaozhizuomoban key="11" {...rest} />
+      return <IconTubiaozhizuomoban key="16" {...rest} />
     case 'icon-Comment':
-      return <IconComment key="12" {...rest} />
+      return <IconComment key="17" {...rest} />
     case 'icon-handbag':
-      return <IconHandbag key="13" {...rest} />
+      return <IconHandbag key="18" {...rest} />
     case 'icon-cart':
-      return <IconCart key="14" {...rest} />
+      return <IconCart key="19" {...rest} />
     case 'icon-notification':
-      return <IconNotification key="15" {...rest} />
+      return <IconNotification key="20" {...rest} />
     case 'icon-search':
-      return <IconSearch key="16" {...rest} />
+      return <IconSearch key="21" {...rest} />
     case 'icon-fontAwesome_star':
-      return <IconFontAwesomeStar key="17" {...rest} />
+      return <IconFontAwesomeStar key="22" {...rest} />
     case 'icon-arrow':
-      return <IconArrow key="18" {...rest} />
+      return <IconArrow key="23" {...rest} />
   }
 
   return null
