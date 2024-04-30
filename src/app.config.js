@@ -12,6 +12,7 @@ export default defineAppConfig({
     'pages/auth/register/index',
     'pages/products/index',
     'pages/products/item/index',
+    'pages/checkout/shipping/index',
   ],
   tabBar: {
     custom: false,

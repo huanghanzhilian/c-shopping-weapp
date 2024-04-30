@@ -4,6 +4,7 @@ import { AuthWrapper, CartInfo, CartItem, EmptyCart } from '@/components'
 import { useAppSelector, useUserInfo } from '@/hooks'
 import { formatNumber } from '@/utils'
 import { Buttons } from '@/components/index'
+import Taro from '@tarojs/taro'
 
 export default function CartScreen() {
   //? Get User Data
@@ -15,7 +16,9 @@ export default function CartScreen() {
   //? Handlers
   const handleRoute = () => {
     mustAuthAction(() => {
-      router.push({ pathname: `/payment`, params: {} })
+      Taro.navigateTo({
+        url: '/pages/checkout/shipping/index',
+      })
     })
   }
 
@@ -75,7 +78,7 @@ export default function CartScreen() {
                   </Text>
                 </View>
               </View>
-              <Buttons className="w-1/2 mr-0" onPress={handleRoute}>
+              <Buttons className="w-1/2 mr-0" onClick={handleRoute}>
                 继续
               </Buttons>
             </View>

@@ -3,7 +3,7 @@ import regions from 'china-citys'
 import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Text, View } from 'react-native'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+// import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { SubmitModalBtn } from '../common/Buttons'
 import Combobox from '../common/Combobox'
@@ -22,7 +22,7 @@ const AddressModal = props => {
 
   //? Assets
   const AllProvinces = regions.getProvinces()
-  const insets = useSafeAreaInsets()
+  // const insets = useSafeAreaInsets()
 
   //? Get User Data
   const { userInfo } = useUserInfo()
@@ -93,7 +93,10 @@ const AddressModal = props => {
       <Modal isShow={isShow} onClose={onClose} effect="bottom-to-top" className="m-0">
         <Modal.Content
           onClose={onClose}
-          style={{ paddingTop: insets.top }}
+          style={{
+            paddingTop: 0,
+            // a:insets.top
+          }}
           className="flex flex-col w-[100vw] h-[100vh] m-0 px-5 py-3 bg-white"
         >
           <Modal.Header onClose={onClose}>地址管理</Modal.Header>

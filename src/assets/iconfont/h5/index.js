@@ -1,6 +1,10 @@
 /* eslint-disable */
 
 import React from 'react'
+import IconWallet from './IconWallet'
+import IconRuler from './IconRuler'
+import IconShoppingCart from './IconShoppingCart'
+import IconLocation from './IconLocation'
 import IconChat1196057Easyiconnet1 from './IconChat1196057Easyiconnet1'
 import IconOfficialofficialtext from './IconOfficialofficialtext'
 import IconStomachRuler from './IconStomachRuler'
@@ -24,6 +28,10 @@ import IconNotification from './IconNotification'
 import IconSearch from './IconSearch'
 import IconFontAwesomeStar from './IconFontAwesomeStar'
 import IconArrow from './IconArrow'
+export { default as IconWallet } from './IconWallet'
+export { default as IconRuler } from './IconRuler'
+export { default as IconShoppingCart } from './IconShoppingCart'
+export { default as IconLocation } from './IconLocation'
 export { default as IconChat1196057Easyiconnet1 } from './IconChat1196057Easyiconnet1'
 export { default as IconOfficialofficialtext } from './IconOfficialofficialtext'
 export { default as IconStomachRuler } from './IconStomachRuler'
@@ -50,6 +58,14 @@ export { default as IconArrow } from './IconArrow'
 
 const IconFont = ({ name, ...rest }) => {
   switch (name) {
+    case 'icon-wallet':
+      return <IconWallet {...rest} />
+    case 'icon-ruler':
+      return <IconRuler {...rest} />
+    case 'icon-ShoppingCart':
+      return <IconShoppingCart {...rest} />
+    case 'icon-location':
+      return <IconLocation {...rest} />
     case 'icon-chat1196057easyiconnet1':
       return <IconChat1196057Easyiconnet1 {...rest} />
     case 'icon-Officialofficialtext':
