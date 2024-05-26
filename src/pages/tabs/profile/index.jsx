@@ -34,7 +34,7 @@ export default function ProfileScreen() {
     {
       name: '最近访问',
       IconName: 'icon-clock-circle-o',
-      path: '/profile/user-history',
+      path: '/pages/profile/user-history/index',
     },
     {
       name: '账户信息',

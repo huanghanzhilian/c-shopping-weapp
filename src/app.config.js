@@ -13,6 +13,7 @@ export default defineAppConfig({
     'pages/products/index',
     'pages/products/item/index',
     'pages/checkout/shipping/index',
+    'pages/profile/user-history/index',
   ],
   tabBar: {
     custom: false,
