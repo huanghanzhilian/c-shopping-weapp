@@ -16,7 +16,7 @@ const UserHistoryScreen = () => {
           <View className="space-y-4 bg-white w-full px-3">
             {lastSeen.map(item => (
               <View className="border-b border-gray-200 " key={item.productID}>
-                <Link href={`/products/${item.productID}`} asChild>
+                <Link href={`/pages/products/item/index?id=${item.productID}`} asChild>
                   <View className="flex flex-row items-center gap-4 py-4 ">
                     <ResponsiveImage
                       className="w-36 h-36 md:mx-auto"

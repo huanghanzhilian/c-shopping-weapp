@@ -19,7 +19,7 @@ export default function ProfileScreen() {
     {
       name: '我的收藏',
       IconName: 'icon-tubiaozhizuomoban-',
-      path: '/profile/lists',
+      path: '/pages/profile/lists/index',
     },
     {
       name: '我的评价',
