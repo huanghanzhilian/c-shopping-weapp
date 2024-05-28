@@ -1,6 +1,5 @@
-import { Text, View } from 'react-native'
-
-import OrderEmpty from '../svgs/order-empty'
+import { Text, View } from '@tarojs/components'
+import { OrderEmpty } from '..'
 
 export default function EmptyOrdersList() {
   return (

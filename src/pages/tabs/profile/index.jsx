@@ -14,7 +14,7 @@ export default function ProfileScreen() {
     {
       name: '我的订单',
       IconName: 'icon-handbag',
-      path: '/profile/orders',
+      path: '/pages/profile/orders/index',
     },
     {
       name: '我的收藏',
