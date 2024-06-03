@@ -1,17 +1,16 @@
-// import { FlashList } from '@shopify/flash-list'
 import { useState } from 'react'
-import { View, ScrollView } from '@tarojs/components'
+import { ScrollView, View } from '@tarojs/components'
 
-import { OrderCard, ShowWrapper, EmptyOrdersList, OrderSkeleton } from '@/components'
-import { useGetOrdersQuery } from '@/services'
+import { ReveiwCard, ShowWrapper, EmptyCommentsList, ReveiwSkeleton } from '@/components'
+import { useGetReviewsQuery } from '@/services'
 
-const OrdersScreen = () => {
+const ReviewsScreen = () => {
   //? Assets
   const [page, setPage] = useState(1)
 
-  //? Get Orders Data
+  //*   Get Reviews
   const { data, hasNextPage, isSuccess, isFetching, error, isError, refetch, originalArgs } =
-    useGetOrdersQuery(
+    useGetReviewsQuery(
       {
         pageSize: 5,
         page,
@@ -33,7 +32,7 @@ const OrdersScreen = () => {
     setPage(Number(page) + 1)
   }
 
-  //? Render
+  //? Render(s)
   return (
     <>
       <View className="bg-white">
@@ -43,21 +42,30 @@ const OrdersScreen = () => {
           refetch={refetch}
           isFetching={isFetching}
           isSuccess={isSuccess}
-          dataLength={data ? data?.data?.ordersLength : 0}
-          emptyComponent={<EmptyOrdersList />}
-          loadingComponent={<OrderSkeleton />}
+          dataLength={data ? data?.data?.reviewsLength : 0}
+          emptyComponent={<EmptyCommentsList />}
+          loadingComponent={<ReveiwSkeleton />}
           originalArgs={originalArgs}
         >
-          <View className="px-4 py-3 space-y-3 h-full bg-white">
+          <View className="px-4 py-3 space-y-3 h-full">
+            {/* <ReveiwSkeleton /> */}
             <ScrollView>
-              {data?.data?.orders.map(item => (
-                <OrderCard key={item._id} order={item} />
+              {data?.data?.reviews.map(item => (
+                <ReveiwCard key={item._id} item={item} />
               ))}
             </ScrollView>
+            {/* <FlashList
+              data={data?.data?.reviews}
+              renderItem={({ item, index }) => <ReveiwCard key={item._id} item={item} />}
+              onEndReached={onEndReachedThreshold}
+              onEndReachedThreshold={0}
+              estimatedItemSize={200}
+            /> */}
           </View>
         </ShowWrapper>
       </View>
     </>
   )
 }
-export default OrdersScreen
+
+export default ReviewsScreen

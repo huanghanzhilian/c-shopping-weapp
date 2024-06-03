@@ -34,7 +34,7 @@ export default function ShowWrapper(props) {
         type === 'list' && originalArgs && originalArgs?.page > 1 ? (
           <>{children}</>
         ) : (
-          <View className="">{loadingComponent || <PageLoading />}</View>
+          <View className="px-4 py-3">{loadingComponent || <PageLoading />}</View>
         )
       ) : isSuccess && type === 'list' && dataLength > 0 ? (
         <>{children}</>

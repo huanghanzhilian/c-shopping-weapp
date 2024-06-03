@@ -1,10 +1,11 @@
 import { Fragment, useState } from 'react'
-import { Text, View } from 'react-native'
-
-import Icons from '../common/Icons'
-import ResponsiveImage from '../common/ResponsiveImage'
+import { Text, View } from '@tarojs/components'
 
 import { useEditReviewMutation } from '@/services'
+
+// import Icons from '../common/Icons'
+import ResponsiveImage from '../common/ResponsiveImage'
+import IconFont from '@/assets/iconfont'
 
 const ReveiwCard = props => {
   //? Props
@@ -25,16 +26,18 @@ const ReveiwCard = props => {
           <ResponsiveImage
             dimensions="w-16 h-12"
             imageStyles="w-16 h-12"
-            source={item.product.images[0].url}
+            src={item.product.images[0].url}
             alt=""
           />
 
           <View
-            className={`w-5 h-5 text-center pt-0.5 inline-block rounded-md ml-10 mt-2  ${
+            className={`w-5 h-5 leading-[100%] text-center pt-0.5 inline-block rounded-md ml-10 mt-2  ${
               item.rating <= 2 ? 'bg-red-500' : item.rating === 3 ? 'bg-amber-500' : 'bg-green-500'
             }`}
           >
-            <Text className="text-white text-center">{item.rating}</Text>
+            <Text className="text-white text-center test-sm inline-block leading-none">
+              {item.rating}
+            </Text>
           </View>
         </View>
 
@@ -50,15 +53,18 @@ const ReveiwCard = props => {
               >
                 {status === 1 ? (
                   <View className="bg-amber-500 rounded-full p-0.5 icon">
-                    <Icons.AntDesign name="clockcircle" size={16} className="text-white" />
+                    {/* <Icons.AntDesign name="clockcircle" size={16} className="text-white" /> */}
+                    <IconFont name="icon-round-check_circle_o" size={20} color="#FFFFFF" />
                   </View>
                 ) : status === 2 ? (
                   <View className="rounded-full p-0.5 bg-green-500 icon">
-                    <Icons.AntDesign name="checkcircle" size={16} className="text-white" />
+                    {/* <Icons.AntDesign name="checkcircle" size={16} className="text-white" /> */}
+                    <IconFont name="icon-clock-circle-o" size={20} color="#FFFFFF" />
                   </View>
                 ) : (
                   <View className="rounded-full p-0.5 icon bg-red-500">
-                    <Icons.Entypo name="circle-with-cross" size={16} className="text-white" />
+                    {/* <Icons.Entypo name="circle-with-cross" size={16} className="text-white" /> */}
+                    <IconFont name="icon-clock-circle-o" size={20} color="#FFFFFF" />
                   </View>
                 )}
                 <Text
@@ -73,7 +79,8 @@ const ReveiwCard = props => {
                   {status === 1 ? '等待确认' : status === 2 ? '已经确认' : '不见了'}
                 </Text>
               </View>
-              <Icons.Feather name="more-vertical" size={18} />
+              {/* <Icons.Feather name="more-vertical" size={18} /> */}
+              <IconFont name="icon-clock-circle-o" size={20} color="#FFFFFF" />
             </View>
           </View>
 
@@ -83,7 +90,8 @@ const ReveiwCard = props => {
             <View>
               {item.positivePoints.map(point => (
                 <View className="flex flex-row items-center gap-x-1" key={point.id}>
-                  <Icons.AntDesign name="plus" size={20} className="text-green-400 icon" />
+                  {/* <Icons.AntDesign name="plus" size={20} className="text-green-400 icon" /> */}
+                  <IconFont name="icon-clock-circle-o" size={20} color="#FFFFFF" />
                   <Text>{point.title}</Text>
                 </View>
               ))}
@@ -91,7 +99,8 @@ const ReveiwCard = props => {
             <View>
               {item.negativePoints.map(point => (
                 <View className="flex flex-row items-center gap-x-1" key={point.id}>
-                  <Icons.AntDesign name="minus" size={20} className="text-red-400 icon" />
+                  {/* <Icons.AntDesign name="minus" size={20} className="text-red-400 icon" /> */}
+                  <IconFont name="icon-clock-circle-o" size={20} color="#FFFFFF" />
                   <Text>{point.title}</Text>
                 </View>
               ))}

@@ -24,7 +24,7 @@ export default function ProfileScreen() {
     {
       name: '我的评价',
       IconName: 'icon-Comment',
-      path: '/profile/reviews',
+      path: '/pages/profile/reviews/index',
     },
     {
       name: '地址管理',
