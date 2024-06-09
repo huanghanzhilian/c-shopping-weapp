@@ -39,7 +39,7 @@ export default function ProfileScreen() {
     {
       name: '账户信息',
       IconName: 'icon-custom-user',
-      path: '/profile/personal-info',
+      path: '/pages/profile/personal-info/index',
     },
   ]
 
