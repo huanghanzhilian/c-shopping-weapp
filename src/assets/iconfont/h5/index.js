@@ -1,6 +1,8 @@
 /* eslint-disable */
 
 import React from 'react'
+import IconPhoneFill from './IconPhoneFill'
+import IconLocalpostoffice from './IconLocalpostoffice'
 import IconWallet from './IconWallet'
 import IconRuler from './IconRuler'
 import IconShoppingCart from './IconShoppingCart'
@@ -28,6 +30,8 @@ import IconNotification from './IconNotification'
 import IconSearch from './IconSearch'
 import IconFontAwesomeStar from './IconFontAwesomeStar'
 import IconArrow from './IconArrow'
+export { default as IconPhoneFill } from './IconPhoneFill'
+export { default as IconLocalpostoffice } from './IconLocalpostoffice'
 export { default as IconWallet } from './IconWallet'
 export { default as IconRuler } from './IconRuler'
 export { default as IconShoppingCart } from './IconShoppingCart'
@@ -58,6 +62,10 @@ export { default as IconArrow } from './IconArrow'
 
 const IconFont = ({ name, ...rest }) => {
   switch (name) {
+    case 'icon-phone-fill':
+      return <IconPhoneFill {...rest} />
+    case 'icon-localpostoffice':
+      return <IconLocalpostoffice {...rest} />
     case 'icon-wallet':
       return <IconWallet {...rest} />
     case 'icon-ruler':

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AddressModal from '../modals/AddressModal'
+// import AddressModal from '../modals/AddressModal'
 
 import { useDisclosure, useUserInfo } from '@/hooks'
 
@@ -30,11 +30,13 @@ const WithAddressModal = props => {
       )}
 
       {!isVerify ? null : !isLoading ? (
-        <AddressModal
+        <>
+          {/* <AddressModal
           isShow={isShowAddressModal}
           onClose={addressModalHandlers.close}
           address={userInfo?.address ?? {}}
-        />
+        /> */}
+        </>
       ) : null}
     </>
   )

@@ -29,7 +29,7 @@ export default function ProfileScreen() {
     {
       name: '地址管理',
       IconName: 'icon-locationcity',
-      path: '/profile/addresses',
+      path: '/pages/profile/addresses/index',
     },
     {
       name: '最近访问',

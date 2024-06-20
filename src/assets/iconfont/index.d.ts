@@ -3,6 +3,8 @@ import React, { FunctionComponent } from 'react'
 
 interface Props {
   name:
+    | 'icon-phone-fill'
+    | 'icon-localpostoffice'
     | 'icon-wallet'
     | 'icon-ruler'
     | 'icon-ShoppingCart'

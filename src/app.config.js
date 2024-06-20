@@ -18,6 +18,7 @@ export default defineAppConfig({
     'pages/profile/orders/index',
     'pages/profile/reviews/index',
     'pages/profile/personal-info/index',
+    'pages/profile/addresses/index',
   ],
   tabBar: {
     custom: false,
